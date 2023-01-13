@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>login</h1>
+    <h1>LOGIN <br> <?php echo $datos['titulo']; ?></h1>
 </body>
 </html>
+

@@ -1,9 +1,9 @@
 <?php
 
 
-class Paginas{
+class Paginas extends Router{
 
-    public function __construct()
+    public function index()
     {
         echo "Soy el controller PAGINAS <br>";
     }

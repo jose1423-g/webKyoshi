@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
-    <link href="http://localhost/webkyoshi/dist/output.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <link rel="stylesheet" href="http://localhost/webkyoshi/views/recursos/css/style.css">
-</head>
-<body>
 
     <header class="flex justify-between items-center px-5 h-20 border fixed top-0 w-screen bg-white">
             <a href="#">

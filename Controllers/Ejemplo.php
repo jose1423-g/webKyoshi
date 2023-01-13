@@ -1,6 +1,6 @@
 <?php 
 
-class Ejemplo{
+class Ejemplo extends Router{
     
     public function __construct()
     {
@@ -13,6 +13,10 @@ class Ejemplo{
     }
 
     public function index(){
-        echo "SOY EL METODO INDEX <br>";
+        //echo "SOY EL METODO INDEX <br>";
+        $datos = [
+          'titulo' => 'Bienvenidos a MVC hola mundo'
+        ];
+        $this->vista('login/index', $datos);
     }
 }
