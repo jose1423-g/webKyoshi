@@ -1,65 +1,66 @@
 <?php 
     namespace Routes;
 
-use Controllers\Ejemplo;
 
     /*
     0 = controlador
     1 = metodo 
     2 = parametro
     /articulos/update/4;
+    filter_input = Toma una variable externa concreta por su nombre y opcionalmente la filtra.
+    ucwords() = Convierte a mayúsculas el primer caracter de cada palabra de una cadena. 
     */
 
     class Config{
-        protected $controllerActual = 'ejemplo';
-        protected $metodActual = 'index';
-        protected $parametros = [];
+        private $controller;
+        private $method;
+        private $parameter;
 
         public function __construct()
         {
-            //print_r($this->getUrl());
-
-            $url = $this->getUrl();
-
-
-            if (file_exists('./Controllers/'.ucwords($url[0]).'.php')) {                
-                //Si existe se setea como controlador por defecto;
-                $this->controllerActual = ucwords($url[0]); //le asignamos a la variable controllerActual el valor de url en la posicion 0 
-                //unset = Destruye una o mas variables especificadas
-                unset($url[0]);
-                
-            }
-                require_once './Controllers/'. $this->controllerActual.'.php';
-                //creamos un nuevo objeto del controlador
-                $this->controllerActual = new $this->controllerActual;
-
-            //verificamos si el metodo existe
-            if (isset($url[1])) {//si la el metodo existe;
-                if (method_exists($this->controllerActual, $url[1])) {
-                    //chequeamos el metodo
-                    $this->metodActual = $url[1];
-                }   
-            }
-
-            //Cargamos el parametro si es que existe
-            $this->parametros = $url ? array_values($url) : [];//operadores ternarios
-            //print_r("imprimo la url de la pagina  ".$url);
-            //
-            call_user_func_array([$this->controllerActual, $this->metodActual], $this->parametros);
-            
-        }
-
-        public function getUrl(){
-            //echo $_GET['url'];
-
             if (isset($_GET['url'])) {
                 $url = rtrim($_GET['url'],'/');
-                $url = filter_var($url,FILTER_SANITIZE_URL);
-                $url = explode('/', $url);
-                return $url;
-            }
+                $url = filter_input(INPUT_GET, 'url' , FILTER_SANITIZE_URL);
+                //Devuelve un array de string creados por la división del parámetro string usando los delimitadores indicados en el parámetro delimiter.
+                $url = explode('/', $url);  
+                $url = array_filter($url); 
+                print_r($url); 
+                echo "<br><br>";
 
+                if ($url[0] == 'index.php') {
+                    echo "true";
+                    $this->controller = 'ejemplo';
+                }else{
+                    $this->controller = strtolower(array_shift($url));
+                }
+
+                $this->method = strtolower(array_shift($url));
+                if (!$this->method) {
+                    $this->method = 'index';                    
+                }
+                //la variable $parameter es igual a la $url se convertira en un array la variable $parameter
+                $this->parameter = $url;
+                echo "paramter = a la url <br>";
+                var_dump($this->parameter);
+                echo "<br><br><br>";
+        }
+        else
+        {
+            echo "Carga el controlador y metodo asignado por defecto <br>";
         }
 
-
     }
+
+    public function getcontroller(){
+       return $this->controller;
+    }
+    public function getmethod(){
+        return $this->method;
+    }
+    public function getparamter(){
+        return $this->parameter;
+    }
+
+
+
+}

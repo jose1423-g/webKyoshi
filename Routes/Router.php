@@ -1,6 +1,55 @@
 <?php 
-
+    //namespace Routes;
     //se encraga de poder cargar los modelos y las vistas
+    namespace Routes;
+
+    class Router{
+
+        public static function router(Config $config)
+        {   
+            $controller = $config->getcontroller();
+            $url = ROOT . 'Controllers' . DS . $controller . '.php';
+            $method = $config->getmethod();
+
+            echo $url;
+
+            if ($method == 'index.php') {
+                echo 'true';
+                $method = 'index';
+            }
+
+            $parameter = $config->getparamter();
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+
+
+        }
+
+
+    }
+    
+
+
+
+
+
+
+
+
+
+
+    /*
     class Router{
         //carga el modelo
         public function modelo($modelo){
@@ -16,10 +65,4 @@
             }
         }
 
-        
-
-
-
-
-
-    }
+    }*/
