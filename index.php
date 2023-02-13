@@ -1,19 +1,13 @@
 <?php
-    
-    //error_reporting(0);
-    //include "./views/components/header.php";
-    define('DS', DIRECTORY_SEPARATOR);
-    define('ROOT', realpath(dirname(__FILE__)).DS);
-    define('URL','http://localhost/webkyoshi/');
+ 
+ //require_once 'libs/conection.php';
+ require_once './libs/controller.php';
+ require_once './libs/model.php';
+ require_once './libs/view.php';
+ require_once './libs/app.php';
+ require_once 'config/config.php';
+ 
 
-use Controllers\Ejemplo;
-use Routes\Config;
-use Routes\Router;
+ $app = new App();
 
-
-    require_once 'Routes/Autoload.php';
-    Routes\Autoload::run();
-    Routes\Router::router(new Config);
-
-
-    //include "./views/components/footer.php";
+?>

@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
 <body>
-    <h1>VIEWS LOGIN</h1><br>
-    <h1>LOGIN</h1>
+    <?php  include './view/components/header.php'; ?>
+    <h1>HOLA Y BIENVENIDO</h1>
+    
 </body>
 </html>
-
