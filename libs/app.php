@@ -49,7 +49,7 @@
                 }
             }else{
                 //error 404
-                include_once 'controller/Error.php';
+                include_once 'controllers/Error.php';
                 $error = new Error404();
             }   
         

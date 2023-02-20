@@ -10,4 +10,10 @@
 
  $app = new App();
 
+
+
+
+
+ echo $ruta;
+
 ?>
