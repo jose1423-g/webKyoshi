@@ -1,4 +1,7 @@
 <?php 
+
+   
+
     /*Contiene la logica de como moldeamos o trabjamos los datos*/
     class Model{
 
@@ -7,11 +10,11 @@
         function __construct()
         {
             //Creamos un objeto de la clase conection. 
-            //$this->link = new Conection();
+            $this->link = new conection();
         }
-        function prepare($qry){
-            return $this->link->conect()->query($qry);  
-        }
+
+       
+        
     }
 
 ?>

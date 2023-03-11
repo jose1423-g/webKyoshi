@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="<?php echo constant('url');?>public/css/style.css">
 </head>
 <body>
-    <?php  include './view/components/header.php'; ?>
+    <?php  include './view/components/header.php';?>
     
     <div class="shadow-md p-4 bg-white">
         <div class="flex items-center h-96">
             <div class="w-1/2 flex justify-center">
                 <div class="w-96">
-                    <h1 class="mb-3 text-6xl font-semibold" id="">TEXTO</h1>
+                    <h1 class="mb-3 text-6xl font-semibold" id="titulo">TEXTO</h1>
                     <h3 class="font-medium text-lg" id="">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ea natus inventore, ad praesentium nobis, vero molestias non quia dolore placeat animi soluta aperiam modi magnam earum ab magni quo.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus rem.   
@@ -129,10 +129,6 @@
             </div>
         </div>
 
-
-
-
-
     </main>
 
 
@@ -140,7 +136,7 @@
 
     
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="<?php echo constant('url'); ?>public/js/main.js"></script>
+    <script src="<?php echo constant('url'); ?>public/js/main.js?=1.0001"></script>
 
 </body>
 </html>

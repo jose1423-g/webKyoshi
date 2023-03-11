@@ -7,9 +7,10 @@
             parent::__construct();
         }
 
-        function render(){
+        function index(){
             $this->view->render('index/index');
         }
+
     }
 
 ?>

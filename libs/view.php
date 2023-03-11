@@ -15,8 +15,7 @@
         }
         //metodo render se ingresa un paramaetro "nombre del controlador" 
         //este metodo se lo pasamos al controller.php y creamos un objeto de la clase View en la clase controller
-        public function render($nombre)
-        {
+        public function render($nombre){   
             require './view/'. $nombre . '.php';
         }
         
