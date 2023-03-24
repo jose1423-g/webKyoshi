@@ -1,9 +1,12 @@
 <?php 
 
     define('url', 'http://localhost/webkyoshi/');
+    
 
+    //DB
     define('host','localhost');
-    define('db','kyoshi');
     define('user','root');
-    define('password','cubo1423');
+    define('password','');
+    define('db','kyoshi');
+
 ?>

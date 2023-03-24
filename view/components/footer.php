@@ -1,6 +1,6 @@
 
-    <footer class="bg-sky-300 h-20 p-3">
-        <h1>Footer</h1>
+    <footer class="lg:ml-80 bg-blue-600 h-20 sticky top-96 p-3">
+        <h1 class="text-white">Footer</h1>
     </footer>
 
 

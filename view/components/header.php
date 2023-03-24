@@ -1,4 +1,4 @@
-<header class="bg-white sticky top-0 box-border shadow-md">
+<header class="bg-white h-20 sticky z-30 top-0 box-border shadow-md">
     <div class="mx-auto p-5">
         <div class="flex justify-between items-center">
             <div class="flex justify-start items-center">    
@@ -9,18 +9,17 @@
                 </div>
                 <ul class="flex font-semibold text-base">
                     <li class="mx-3"><a class="hover:text-blue-600" id="toggle-menu" href="#">Recursos</a>
-                        <ul class="bg-white p-3 absolute top-14 dropdown-menu shadow-md rounded hidden">
-                            <li class=""><a class="hover:text-blue-600" href="#">Plantillas</a></li>
-                            <li class=""><a class="hover:text-blue-600" href="#">eBook</a></li>
-                            <li class=""><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
-                            <li class=""><a class="hover:text-blue-600" href="#">Casos</a></li>
-                            <li class=""><a class="hover:text-blue-600" href="#">Casos</a></li>
-                            <li class=""><a class="hover:text-blue-600" href="#">Infografias</a></li>
-                            <li class=""><a class="hover:text-blue-600" href="#">Rubricas</a></li>
+                        <ul class="bg-white p-3 absolute top-14 shadow-md rounded hidden dropdown-menu">
+                            <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
+                            <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
+                            <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
+                            <li><a class="hover:text-blue-600" href="#">Casos</a></li>
+                            <li><a class="hover:text-blue-600" href="#">Infografias</a></li>
+                            <li><a class="hover:text-blue-600" href="#">Rubricas</a></li>
                         </ul>
                     </li>
-                    <li class="mx-3"><a class="hover:text-blue-600" href="#">Contenido</a></li>
                     <li class="mx-3"><a class="hover:text-blue-600" href="#">Tienda</a></li>
+                    <li class="mx-3"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/">Contenido</a></li>
                 </ul>
             </div>
             <div class="">

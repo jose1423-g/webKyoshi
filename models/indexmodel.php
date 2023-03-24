@@ -1,26 +1,29 @@
 <?php 
 
-    require_once '../libs/model.php';
+    require_once (__DIR__.'/../libs/conection.php');
 
-    class indexModel extends model{
-    
-    public function __construct(){
-        parent::__construct();
-    }
+    class indexModel{
 
-    function index(){
-        $qry = "SELECT * FROM contenido_index";
-        $pre = mysqli_prepare($this->link->conexion(), $qry);
-        $pre->execute();
-        $resp = $pre->get_result();
-        while ($row = $resp->fetch_array(MYSQLI_ASSOC)) {
-            $data = $row['Titulo'];
-            $data = $row['Contenido'];
-            $data = $row['Img'];
+        private $link;
+
+        function __construct(){
+            $this->link = new  conection;
+            $this->link = $this->link->conect();
         }
-        return $data;
-    }
 
+        function indexmodel(){
+            $qry = "SELECT indexId, Titulo, Contenido, Img, Activo FROM contenido_index";
+            $pre = mysqli_prepare($this->link, $qry);
+            $pre->execute();
+            $resp = $pre->get_result();
+
+            $data = array();
+
+            while ($obj = $resp->fetch_object()) {
+                array_push($data, $obj);
+            }
+            return $data;
+        }
        
     }
 

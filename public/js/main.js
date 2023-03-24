@@ -1,38 +1,53 @@
+const url = "http://localhost/webkyoshi/";
+
 $(document).ready( function () {
-    
+
     $.ajax({
         method:"POST",
-        url: "http://localhost/webkyoshi/",
+        url: "http://localhost/webkyoshi/Controllers/indexController.php",
+		data:{
+			op: 'http://localhost/webkyoshi/',
+		},
+		dataType: 'json',
         success: function (data) {
-           $("#IdContenido").html(data);
+			img =  url + data[0].Img;
+			$("#Titulo").text(data[0].Titulo);
+			$("#Contenido").text(data[0].Contenido);
+			$("#content-img").html('<img src="'+img+'" alt="icon-index" class="img">');
+			/*++++++++++++++++++++++++++++++++*/
+			$("#Titulo2").text(data[1].Titulo);
+			$("#Contenido2").text(data[1].Contenido);
+			/*++++++++++++++++++++++++++++++++*/
+		},
+		error: function (jqXHR, estado, error) {
+            console.log(estado);
+            console.log(error);
+        },
+		complete: function (data) {
+			
         }
-
-
     });
+
+
+	function menu() {
+		var html = "";
+		for (let index = 0; index <= 100; index++) {
+			console.log(index);
+			html += '<li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/sqa">sqa (qué sé, qué quiero saber, qué aprendí)</a></li>';		
+		}
+		$("#aside-menu").html(html);
+	}
+	//return menu();
+
 });
 
 
-/* $.ajax({
-			type: "POST",
-			url: "../ria/seg_usuarios_clientes_save_new.ria.php",
-			data: {
-				id_usuario: id_usuario,
-				op: 'load'
-			},		
-			success: function(data){
-				var data = jQuery.parseJSON(data);
-				var result = data.result;
-				if (result == 1) {
-					$("#id_usuario").html(data.id_usuario);
-					$("#IdUsuario").html(data.Usuario);
-					$("#table-clientes tbody").html(data.TableTareas);
-				} else {
-					if (result == -1) {
-						toastr.warning(data.msg);
-					} else {
-						toastr.info(data.msg);
-					}
-				}
-			}
-		});
-	}	 */
+/*FUNCIONES PARA ANIMACIONES */
+
+$('#toggle-menu').hover(function () {
+	$('.dropdown-menu').toggle();
+});
+	
+
+
+
