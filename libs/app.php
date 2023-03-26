@@ -4,7 +4,6 @@ error_reporting(0);
 
 class App{
 
-
     /* 
     url[0] = controller
     url[1] = metodo
@@ -45,7 +44,6 @@ class App{
         }
 
     } else {
-
         require_once './Controllers/indexController.php';
         require_once './view/index.php';
     }

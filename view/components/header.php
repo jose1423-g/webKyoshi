@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main - kyoshi</title>
+    <!-- tailwind --> 
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <!-- fontawesome --> 
+    <script src="https://kit.fontawesome.com/1163d1da29.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="<?php echo constant('url');?>public/css/style.css">
+</head>
+<body>
+
 <header class="bg-white h-20 sticky z-30 top-0 box-border shadow-md">
     <div class="mx-auto p-5">
         <div class="flex justify-between items-center">
@@ -8,8 +24,8 @@
                     </a>
                 </div>
                 <ul class="flex font-semibold text-base">
-                    <li class="mx-3"><a class="hover:text-blue-600" id="toggle-menu" href="#">Recursos</a>
-                        <ul class="bg-white p-3 absolute top-14 shadow-md rounded hidden dropdown-menu">
+                    <li class="mx-3"><a class="hover:text-blue-600 pointer" id="toggle-menu">Recursos<i class="fa-sharp fa-solid fa-caret-down ml-1"></i></a>
+                        <ul class="bg-white p-3 absolute z-30 top-14 shadow-md rounded hidden dropdown-menu">
                             <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
                             <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
                             <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
@@ -25,8 +41,8 @@
             <div class="">
                 <button type="button" class="mr-3" id="icon-search"><span class="fa-sharp fa-solid fa-magnifying-glass text-lg"></span></button>
                 <button type="button" class="mr-3" id=""><span class="fa-sharp fa-solid fa-cart-shopping text-lg"></span></button>
-                <button type="button" class="mr-2 font-semibold rounded-md p-2 hover:text-blue-600" id="btn-inicio">Iniciar sesión</button>
-                <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-registro">Regístrate</button>
+                <button type="button" class="mr-2 font-semibold rounded-md p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>
+                <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register">Regístrate</button>
             </div>
         </div>    
     </div>

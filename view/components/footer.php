@@ -5,6 +5,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="http://localhost/webkyoshi/views/recursos/js/main.js"></script>
+    <script src="<?php echo constant('url'); ?>public/js/main.js?=1.0001"></script>
+
 </body>
 </html>

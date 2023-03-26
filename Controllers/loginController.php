@@ -1,13 +1,11 @@
 <?php 
 
-require_once (__DIR__.'/../Models/mainModel.php');
-require_once './view/main.php';
+require_once './view/login.php';
 
-
-class mainController{
+class loginController{
 
     function __construct(){
-        //echo "<br> Soy el Controller main <br>";
+        //echo "<br> Soy el Controller login<br>";
     }
 
     public function main(){
@@ -23,6 +21,5 @@ class mainController{
     }
 
 }
-
 
 ?>

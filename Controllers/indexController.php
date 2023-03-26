@@ -4,7 +4,7 @@
     
     $obj = new indexModel;    
 
-   $op = $_REQUEST['op'];
+    $op = $_REQUEST['op'];
 
     if ($op == 'http://localhost/webkyoshi/') {
 
@@ -12,4 +12,5 @@
         echo json_encode($data);
     }
 
+    
 ?>

@@ -5,3 +5,6 @@ body{
     max-width: 25rem;
     height: auto;
 }
+.pointer{
+    cursor: pointer;
+}

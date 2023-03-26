@@ -18,6 +18,7 @@ $(document).ready( function () {
 			$("#Titulo2").text(data[1].Titulo);
 			$("#Contenido2").text(data[1].Contenido);
 			/*++++++++++++++++++++++++++++++++*/
+
 		},
 		error: function (jqXHR, estado, error) {
             console.log(estado);
@@ -28,26 +29,25 @@ $(document).ready( function () {
         }
     });
 
+});
 
-	function menu() {
-		var html = "";
-		for (let index = 0; index <= 100; index++) {
-			console.log(index);
-			html += '<li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/sqa">sqa (qué sé, qué quiero saber, qué aprendí)</a></li>';		
-		}
-		$("#aside-menu").html(html);
+//location login
+$("#btn-login").on('click', function (){
+	window.location.href = url+"login";
+});
+//location registro
+$("#btn-register").on('click', function (){
+	window.location.href = url+"registro";
+});
+//despliigue de menu
+$("#toggle-menu").on('click', function(){
+	if($(".dropdown-menu").hasClass('hidden')){
+		$(".dropdown-menu").removeClass('hidden');
+		$("#toggle-menu i").removeClass('fa-sharp fa-solid fa-caret-down');
+		$("#toggle-menu i").addClass('fa-sharp fa-solid fa-caret-up');
+	} else {
+		$(".dropdown-menu").addClass('hidden');
+		$("#toggle-menu i").removeClass('fa-sharp fa-solid fa-caret-up');
+		$("#toggle-menu i").addClass('fa-sharp fa-solid fa-caret-down');
 	}
-	//return menu();
-
 });
-
-
-/*FUNCIONES PARA ANIMACIONES */
-
-$('#toggle-menu').hover(function () {
-	$('.dropdown-menu').toggle();
-});
-	
-
-
-

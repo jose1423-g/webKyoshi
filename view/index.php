@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <!-- tailwind --> 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <!-- fontawesome --> 
-    <script src="https://kit.fontawesome.com/1163d1da29.js" crossorigin="anonymous"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?php echo constant('url');?>public/css/style.css">
-</head>
-<body>
-    
     <?php  include './view/components/header.php';?>
-
-    <div id="elementos">
-
-    </div>
 
     <div class="shadow-md p-4 bg-white">
         <div class="flex items-center h-96">
@@ -36,7 +16,7 @@
         </div>
     </div>
 
-    <main class="mt-3 text-lg">
+    <main class="mt-4 text-lg">
 
         <div class="container mx-auto mb-16 p-2 rounded bg-white shadow-lg">
             <div class="w-1/2 mb-4 p-2 border-b-2">
@@ -57,13 +37,16 @@
                         <button class="p-1 bg-blue-600 rounded-md text-white font-semibold">Explorar más</button>
                     </div>
                     <div class="p-4" id="">
-                        <h1>Contenido dinamico</h1>
-                        <h1>Contenido dinamico</h1>
-                        <h1>Contenido dinamico</h1>
-                        <h1>Contenido dinamico</h1>
-                        <h1>Contenido dinamico</h1>
-                        <h1>Contenido dinamico</h1>
-                        <h1>Contenido dinamico</h1>
+                        
+                        <div class="border w-72">
+                            <div class="">
+                                <img src="" alt="HOLa">
+                            </div>
+                            <div class="border">  
+                                <h1>holas</h1>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -139,13 +122,4 @@
 
     </main>
 
-
-
-
     <?php  include './view/components/footerIndex.php';?>
-    
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="<?php echo constant('url'); ?>public/js/main.js?=1.0001"></script>
-
-</body>
-</html>

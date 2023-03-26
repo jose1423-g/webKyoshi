@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
-     <!-- tailwind --> 
-     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <!-- fontawesome --> 
-    <script src="https://kit.fontawesome.com/1163d1da29.js" crossorigin="anonymous"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?php echo constant('url');?>public/css/style.css">
-</head>
-<body>
-    
-    <?php  include './view/components/header.php';?>
+<?php  include './view/components/header.php';?>
 
     <main class="flex max-w-max bg-white">
         <aside class="bg-white w-80 hidden fixed lg:block lg:fixed top-20 z-20 overflow-y-scroll inset-0" id="">
             <ul class="pl-4 py-4" id="aside-menu">
-            <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/lluvia-de-ideas">LLuvia de ideas</a></li>
-            <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/sqa">sqa (qué sé, qué quiero saber, qué aprendí)</a></li>
+                <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/lluvia-de-ideas">LLuvia de ideas</a></li>
+                <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/sqa">sqa (qué sé, qué quiero saber, qué aprendí)</a></li>
             </ul>
         </aside>
         <div class="lg:ml-80">
@@ -67,20 +51,4 @@
         </div>
     </main>
 
-    <!-- 
-        Posibles login
-        cifraclud
-        plazit
-        udemy
-        huawei
-     -->
-
-
-
     <?php  include './view/components/footer.php';?>
-
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="<?php echo constant('url'); ?>public/js/main.js?=1.0001"></script>
-
-</body>
-</html>
