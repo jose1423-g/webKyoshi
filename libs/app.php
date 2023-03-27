@@ -26,6 +26,7 @@ class App{
 
             if (file_exists($controller)) {
                 require_once $controller;
+                require_once './view/'.$url[0].'.php';
                 $controller = new $obj;
 
                 $controller->{$url[0]}();

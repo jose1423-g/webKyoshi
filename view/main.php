@@ -3,8 +3,17 @@
     <main class="flex max-w-max bg-white">
         <aside class="bg-white w-80 hidden fixed lg:block lg:fixed top-20 z-20 overflow-y-scroll inset-0" id="">
             <ul class="pl-4 py-4" id="aside-menu">
-                <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/lluvia-de-ideas">LLuvia de ideas</a></li>
-                <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/sqa">sqa (qué sé, qué quiero saber, qué aprendí)</a></li>
+                <h1 class="font-bold mb-3">Conocimientos Previos</h1>
+                <li id="aside-menu1"></li>
+                
+                <h1 class="font-bold mb-3">Organizacion de informacion</h1>
+                <li id="aside-menu2"></li>
+
+                <h1 class="font-bold mb-3">Estrategias grupales</h1>
+                <li id="aside-menu3"></li>
+
+                <h1 class="font-bold mb-3">Desarrollo de competencias</h1>
+                <li id="aside-menu4"></li>
             </ul>
         </aside>
         <div class="lg:ml-80">

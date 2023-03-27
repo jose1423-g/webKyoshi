@@ -1,28 +1,19 @@
 <?php 
 
-require_once (__DIR__.'/../Models/mainModel.php');
-require_once './view/main.php';
+    require_once (__DIR__.'/../Models/mainModel.php');
+ //   require_once (__DIR__.'/../view/main.php');
 
 
-class mainController{
+    $obj = new mainModel;    
 
-    function __construct(){
-        //echo "<br> Soy el Controller main <br>";
+    $op = $_REQUEST['op'];
+
+    if ($op == 'http://localhost/webkyoshi/main/'){
+        
+        $data =  $obj->MenuAside();
+
+        echo json_encode($data);
     }
-
-    public function main(){
-        //echo "<br> Soy la funcion o metodo del controller main  ejecutado al entrar<br>";
-    }
-
-    public function holis(){
-        echo "Soy la funcion mainBuscar del controller main <br>";
-    }
-
-    public function saludo($id){
-        echo "funcion con parametros <br>";
-    }
-
-}
 
 
 ?>

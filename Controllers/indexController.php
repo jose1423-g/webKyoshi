@@ -12,5 +12,12 @@
         echo json_encode($data);
     }
 
+    if ($op == 'Preguntas') {
+        echo "Si entro aqui";
+    }
+
+
+
+
     
 ?>
