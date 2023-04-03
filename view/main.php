@@ -1,7 +1,7 @@
 <?php  include './view/components/header.php';?>
 
     <main class="flex max-w-max bg-white">
-        <aside class="bg-white w-80 hidden fixed lg:block lg:fixed top-20 z-20 overflow-y-scroll inset-0" id="">
+        <aside class="bg-white w-80 hidden fixed lg:block lg:fixed top-20 z-20 overflow-y-scroll inset-0" id="drop-aside">
             <ul class="pl-4 py-4" id="aside-menu">
                 <h1 class="font-bold mb-3">Conocimientos Previos</h1>
                 <li id="aside-menu1"></li>

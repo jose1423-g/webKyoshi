@@ -16,34 +16,44 @@
 
 <header class="bg-white h-20 sticky z-30 top-0 box-border shadow-md">
     <div class="mx-auto p-5">
-        <div class="flex justify-between items-center">
-            <div class="flex justify-start items-center">    
-                <div class="flex mr-3">
+        <div class="flex justify-between items-center"><!-- justify-between -->
+                <div class="flex items-center mr-3">
                     <a href="<?php  echo constant('url'); ?>">
-                        <img src="<?php echo constant('url');?>public/img/icon-logo.png" alt="Logo" width="35px" height="auto">
+                        <img src="<?php echo constant('url');?>public/img/icon-logo.png" alt="Logo" width="40px" height="auto">
                     </a>
+                    <h1 class="ml-3 text-3xl font-semibold">Titulo</h1>
                 </div>
-                <ul class="flex font-semibold text-base">
-                    <li class="mx-3"><a class="hover:text-blue-600 pointer" id="toggle-menu">Recursos<i class="fa-sharp fa-solid fa-caret-down ml-1"></i></a>
-                        <ul class="bg-white p-3 absolute z-30 top-14 shadow-md rounded hidden dropdown-menu">
-                            <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
-                            <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
-                            <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
-                            <li><a class="hover:text-blue-600" href="#">Casos</a></li>
-                            <li><a class="hover:text-blue-600" href="#">Infografias</a></li>
-                            <li><a class="hover:text-blue-600" href="#">Rubricas</a></li>
-                        </ul>
-                    </li>
-                    <li class="mx-3"><a class="hover:text-blue-600" href="#">Tienda</a></li>
-                    <li class="mx-3"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/">Contenido</a></li>
-                </ul>
-            </div>
-            <div class="">
-                <button type="button" class="mr-3" id="icon-search"><span class="fa-sharp fa-solid fa-magnifying-glass text-lg"></span></button>
-                <button type="button" class="mr-3" id=""><span class="fa-sharp fa-solid fa-cart-shopping text-lg"></span></button>
-                <button type="button" class="mr-2 font-semibold rounded-md p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>
-                <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register">Regístrate</button>
+            <div class="flex items-center">
+                <div class="flex items-center">
+                    <a class="" href="#"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
+                    <a class="mx-3" href="#"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
+                    <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></img></button>
+                </div>
+                <div class="flex items-center max-lg:shadow max-lg:block max-lg:hidden max-lg:p-3 max-lg:bg-white max-lg:w-full max-lg:top-20 max-lg:start-0 max-lg:absolute menu-drop">
+                    <ul class="block font-semibold lg:flex">
+                        <li class="max-lg:mb-2 mx-3"><a class="hover:text-blue-600 pointer" id="toggle-menu">Recursos<i class="fa-sharp fa-solid fa-caret-down ml-1"></i></a>
+                            <ul class="bg-white pl-3 max-lg:list-disc lg:p-3 lg:absolute  lg:z-30 top-14 lg:shadow-md rounded hidden dropdown-menu">
+                                <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
+                                <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
+                                <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
+                                <li><a class="hover:text-blue-600" href="#">Casos</a></li>
+                                <li><a class="hover:text-blue-600" href="#">Infografias</a></li>
+                                <li><a class="hover:text-blue-600" href="#">Rubricas</a></li>
+                            </ul>
+                        </li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Tienda</a></li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/">Contenido</a></li>
+                    </ul>
+                    <div class="max-lg:border-t max-lg:p-2">
+                        <button type="button" class="mr-2 font-semibold rounded-md p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>
+                        <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register">Regístrate</button>
+                    </div>
+                </div>
             </div>
         </div>    
     </div>
 </header>
+<div class="mx-auto p-5 sticky top-20 h-10 flex justify-between items-center w-full bg-blue-500">
+    <h1>holis soy la nav</h1>
+    <button type="button" class="lg:hidden" id="menu-aside"><img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></button>
+</div>

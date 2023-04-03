@@ -10,6 +10,17 @@ $app = new App();
 
 
 
+/* Agregar al menu 
+    Recursos del Aula
+
+    Investigar de apis sobre garabar pantalla 
+    ¿ microsof one not ? 
+
+    COLORES ?????
+    premium == amarillo 
+
+
+*/
 
 
 ?>

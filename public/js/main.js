@@ -1,7 +1,7 @@
 const url = "http://localhost/webkyoshi/";
 
 $(document).ready( function () {
-
+	/* CARGA INDEX */
     $.ajax({
         method:"POST",
         url: "http://localhost/webkyoshi/Controllers/indexController.php",
@@ -11,13 +11,25 @@ $(document).ready( function () {
 		dataType: 'json',
         success: function (data) {
 			img =  url + data[0].Img;
-			$("#Titulo").text(data[0].Titulo);
-			$("#Contenido").text(data[0].Contenido);
-			$("#content-img").html('<img src="'+img+'" alt="icon-index" class="">');
-			/*++++++++++++++++++++++++++++++++*/
+			/*++++++++++++++Inicio++++++++++++++++++*/
+			$("#Titulo1").text(data[0].Titulo);
+			$("#Contenido1").text(data[0].Contenido);
+			$("#content-img1").html('<img src="'+img+'" alt="icon-index" class="">');
+			/*++++++++++++++Explora++++++++++++++++++*/
 			$("#Titulo2").text(data[1].Titulo);
 			$("#Contenido2").text(data[1].Contenido);
-			/*++++++++++++++++++++++++++++++++*/
+			/*++++++++++++++planes++++++++++++++++++*/
+			$("#Titulo3").text(data[2].Titulo);
+			$("#Contenido3").text(data[2].Contenido);
+			$("#content-img3").html('<img src="'+img+'" alt="icon-index" class="">');
+			/*+++++++++++++++Premium+++++++++++++++++*/
+			$("#Titulo4").text(data[3].Titulo);
+			$("#Contenido4").text(data[3].Contenido);
+			/*+++++++++++++++Recursos+++++++++++++++++*/
+			$("#Titulo5").text(data[4].Titulo);
+			$("#Contenido5").text(data[4].Contenido);
+			$("#content-img5").html('<img src="'+img+'" alt="icon-index" class="">');
+			
 		},
 		error: function (jqXHR, estado, error) {
             console.log(estado);
@@ -27,10 +39,7 @@ $(document).ready( function () {
 			
         }
     });
-
-	/* <li class="mb-3"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/main/sqa">sqa (qué sé, qué quiero saber, qué aprendí)</a></li> */
-
-
+	/* Menu Aside */
 	$.ajax({
         method:"POST",
         url: "http://localhost/webkyoshi/Controllers/mainController.php",
@@ -71,7 +80,6 @@ $(document).ready( function () {
 			
         }
     });
-
 	//Explora contenido dinamico
 	$(".contenido-dinamico").on('click', function () {
 		var data = $(this).attr('data-id');
@@ -97,7 +105,6 @@ $(document).ready( function () {
 			}
 		});
 	});
-
 	//location login
 	$("#btn-login").on('click', function (){
 		window.location.href = url+"login";
@@ -106,7 +113,22 @@ $(document).ready( function () {
 	$("#btn-register").on('click', function (){
 		window.location.href = url+"registro";
 	});
-	//despliigue de menu
+	//despliegue de menu
+	$("#btn-menu").on('click', function(){
+		if($(".menu-drop").hasClass('max-lg:hidden')){
+			$(".menu-drop").removeClass('max-lg:hidden');
+			$("#btn-menu").html('<img src="'+url+'public/img/closemenu.png" alt="" width="45px"></img>')
+			//$("#toggle-menu i").addClass('fa-sharp fa-solid fa-caret-up');
+		} else {
+			$(".menu-drop").addClass('max-lg:hidden');
+			$("#btn-menu").html('<img src="'+url+'public/img/iconmenu.png" alt="" width="45px"></img>')
+			//$("#btn-menu i").addClass('fa-sharp fa-solid fa-caret-down');
+		}
+	});
+
+	/* <img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></img> */
+	
+	//despliegue de sub-menu
 	$("#toggle-menu").on('click', function(){
 		if($(".dropdown-menu").hasClass('hidden')){
 			$(".dropdown-menu").removeClass('hidden');
@@ -118,11 +140,20 @@ $(document).ready( function () {
 			$("#toggle-menu i").addClass('fa-sharp fa-solid fa-caret-down');
 		}
 	});
-
-
-
-
-
+	//Menu aside
+	$("#menu-aside").on('click', function(){
+		$("#drop-aside").toggle();
+		/* 
+		if($(".menu-drop").hasClass('max-lg:hidden')){
+			$(".menu-drop").removeClass('max-lg:hidden');
+			$("#btn-menu").html('<img src="'+url+'public/img/closemenu.png" alt="" width="45px"></img>')
+			//$("#toggle-menu i").addClass('fa-sharp fa-solid fa-caret-up');
+		} else {
+			$(".menu-drop").addClass('max-lg:hidden');
+			$("#btn-menu").html('<img src="'+url+'public/img/iconmenu.png" alt="" width="45px"></img>')
+			//$("#btn-menu i").addClass('fa-sharp fa-solid fa-caret-down');
+		} */
+	});
 
 });
 
