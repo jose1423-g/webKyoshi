@@ -1,14 +1,13 @@
     <?php  include './view/components/header.php';?>
 
-    <div class="w-full mb-16 shadow-lg p-4 rounded-md bg-white">
-        <div class="max-md:block flex justify-around items-center p-2">
-            <div class="w-96">
-                <h2 class="text-6xl font-semibold mb-3" id="Titulo1"></h2>
-                <p class="font-semibold" id="Contenido1"></p>
-            </div>
-            <div class="flex justify-center w-96" id="content-img1">
-            </div>
+    <div class="block shadow-lg w-full mb-16 p-3 lg:p-4 lg:flex justify-center items-center rounded-md bg-white">    
+        <div class="lg:w-1/2 max-lg:mb-3">
+            <h2 class="text-6xl font-semibold mb-4" id="Titulo1"></h2>
+            <p class="font-semibold mb-4" id="Contenido1"></p>
+            <button class="p-2 w-40 bg-blue-600 rounded-md text-white text-base font-semibold max-lg:hidden">Empezar</button>
         </div>
+        <div class="flex justify-center mb-4" id="content-img1"></div>
+        <button class="p-2 mb-2 w-full bg-blue-600 rounded-md text-white text-base font-semibold lg:hidden">Empezar</button>
     </div>
 
     <main class="mt-4 text-lg">
@@ -19,7 +18,7 @@
                 <p id="Contenido2"></p>
             </div>
             <div>
-                <ul class="font-semibold flex mb-3">
+                <ul class="font-semibold flex mb-3 hidden">
                     <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Preguntas">Preguntas</a></li>
                     <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Diagramas">Diagramas</a></li>
                     <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Mapas cognitivos">Mapas cognitivos</a></li>
@@ -46,7 +45,7 @@
         </div>
 
         <!-- planes -->
-        <div class="container mx-auto mb-16 shadow-lg p-4 rounded-md bg-white">
+    <!--     <div class="container mx-auto mb-16 shadow-lg p-4 rounded-md bg-white">
             <div class="flex justify-around items-center h-96">
                 <div class="w-96">
                     <h2 class="text-5xl font-semibold mb-3" id="Titulo3"></h2>
@@ -55,6 +54,15 @@
                 </div>
                 <div class="flex justify-center w-96" id="content-img3"></div>
             </div>
+        </div> -->
+        <div class="block shadow-lg container mx-auto mb-16 p-3 lg:p-4 lg:flex justify-center items-center rounded-md bg-white">    
+            <div class="lg:w-1/2 max-lg:mb-3">
+                <h2 class="text-6xl font-semibold mb-4" id="Titulo3"></h2>
+                <p class="font-semibold mb-4" id="Contenido3"></p>
+                <button class="p-2 w-40 bg-blue-600 rounded-md text-white text-base font-semibold max-lg:hidden">Ver los Planes</button>
+            </div>
+            <div class="flex justify-center mb-4" id="content-img3"></div>
+            <button class="p-2 mb-2 w-full bg-blue-600 rounded-md text-white text-base font-semibold lg:hidden">Empezar</button>
         </div>
 
         <!-- Recursos -->
@@ -64,7 +72,7 @@
                 <p id="Contenido4"></p>
             </div>
             <div class="">
-                <ul class="font-semibold flex mb-3">
+                <ul class="font-semibold flex mb-3 hidden">
                     <li class="mx-2 hover:text-blue-600"><a href="">Plantillas</a></li>
                     <li class="mx-2 hover:text-blue-600"><a href="">eBooks</a></li>
                     <li class="mx-2 hover:text-blue-600"><a href="">Guias de Practica</a></li>

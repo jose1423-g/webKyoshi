@@ -17,17 +17,20 @@
 <header class="bg-white h-20 sticky z-30 top-0 box-border shadow-md">
     <div class="mx-auto p-5">
         <div class="flex justify-between items-center"><!-- justify-between -->
-                <div class="flex items-center mr-3">
-                    <a href="<?php  echo constant('url'); ?>">
-                        <img src="<?php echo constant('url');?>public/img/icon-logo.png" alt="Logo" width="40px" height="auto">
-                    </a>
-                    <h1 class="ml-3 text-3xl font-semibold">Titulo</h1>
-                </div>
+            <div class="flex lg:hidden">
+                <button type="button" class="lg:hidden" id="btn-aside"><img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></button>
+            </div>
+            <div class="flex items-center mr-3">
+                <a href="<?php  echo constant('url'); ?>">
+                    <img src="<?php echo constant('url');?>public/img/icon-logo.png" alt="Logo" width="40px" height="auto">
+                </a>
+                <h1 class="ml-3 text-3xl font-semibold max-lg:hidden">Titulo</h1>
+            </div>
             <div class="flex items-center">
                 <div class="flex items-center">
                     <a class="" href="#"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
                     <a class="mx-3" href="#"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
-                    <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></img></button>
+                    <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/pointmenu.png" alt="" width="45px"></img></button>
                 </div>
                 <div class="flex items-center max-lg:shadow max-lg:block max-lg:hidden max-lg:p-3 max-lg:bg-white max-lg:w-full max-lg:top-20 max-lg:start-0 max-lg:absolute menu-drop">
                     <ul class="block font-semibold lg:flex">
@@ -53,7 +56,3 @@
         </div>    
     </div>
 </header>
-<div class="mx-auto p-5 sticky top-20 h-10 flex justify-between items-center w-full bg-blue-500">
-    <h1>holis soy la nav</h1>
-    <button type="button" class="lg:hidden" id="menu-aside"><img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></button>
-</div>

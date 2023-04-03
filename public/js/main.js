@@ -11,24 +11,24 @@ $(document).ready( function () {
 		dataType: 'json',
         success: function (data) {
 			img =  url + data[0].Img;
-			/*++++++++++++++Inicio++++++++++++++++++*/
+			/*Inicio*/
 			$("#Titulo1").text(data[0].Titulo);
 			$("#Contenido1").text(data[0].Contenido);
-			$("#content-img1").html('<img src="'+img+'" alt="icon-index" class="">');
-			/*++++++++++++++Explora++++++++++++++++++*/
+			$("#content-img1").html('<img src="'+img+'" alt="icon-index">');
+			/*Explora*/
 			$("#Titulo2").text(data[1].Titulo);
 			$("#Contenido2").text(data[1].Contenido);
-			/*++++++++++++++planes++++++++++++++++++*/
+			/*planes*/
 			$("#Titulo3").text(data[2].Titulo);
 			$("#Contenido3").text(data[2].Contenido);
-			$("#content-img3").html('<img src="'+img+'" alt="icon-index" class="">');
-			/*+++++++++++++++Premium+++++++++++++++++*/
+			$("#content-img3").html('<img src="'+img+'" alt="icon-index">');
+			/*+Premium*/
 			$("#Titulo4").text(data[3].Titulo);
 			$("#Contenido4").text(data[3].Contenido);
-			/*+++++++++++++++Recursos+++++++++++++++++*/
+			/*+Recursos*/
 			$("#Titulo5").text(data[4].Titulo);
 			$("#Contenido5").text(data[4].Contenido);
-			$("#content-img5").html('<img src="'+img+'" alt="icon-index" class="">');
+			$("#content-img5").html('<img src="'+img+'" alt="icon-index">');
 			
 		},
 		error: function (jqXHR, estado, error) {
@@ -105,6 +105,7 @@ $(document).ready( function () {
 			}
 		});
 	});
+	//LOCATION HREF
 	//location login
 	$("#btn-login").on('click', function (){
 		window.location.href = url+"login";
@@ -113,6 +114,7 @@ $(document).ready( function () {
 	$("#btn-register").on('click', function (){
 		window.location.href = url+"registro";
 	});
+
 	//despliegue de menu
 	$("#btn-menu").on('click', function(){
 		if($(".menu-drop").hasClass('max-lg:hidden')){
@@ -121,14 +123,11 @@ $(document).ready( function () {
 			//$("#toggle-menu i").addClass('fa-sharp fa-solid fa-caret-up');
 		} else {
 			$(".menu-drop").addClass('max-lg:hidden');
-			$("#btn-menu").html('<img src="'+url+'public/img/iconmenu.png" alt="" width="45px"></img>')
-			//$("#btn-menu i").addClass('fa-sharp fa-solid fa-caret-down');
+			$("#btn-menu").html('<img src="'+url+'public/img/pointmenu.png" alt="" width="45px"></img>')
 		}
 	});
-
-	/* <img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></img> */
 	
-	//despliegue de sub-menu
+	//despliegue de sub-menu RECURSOS
 	$("#toggle-menu").on('click', function(){
 		if($(".dropdown-menu").hasClass('hidden')){
 			$(".dropdown-menu").removeClass('hidden');
@@ -141,8 +140,8 @@ $(document).ready( function () {
 		}
 	});
 	//Menu aside
-	$("#menu-aside").on('click', function(){
-		$("#drop-aside").toggle();
+	$("#btn-aside").on('click', function(){
+		$("#drop-aside").toggle('slow');
 		/* 
 		if($(".menu-drop").hasClass('max-lg:hidden')){
 			$(".menu-drop").removeClass('max-lg:hidden');
