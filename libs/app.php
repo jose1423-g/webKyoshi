@@ -30,15 +30,7 @@ class App{
                 $controller = new $obj;
 
                 $controller->{$url[0]}();
-                
-                $param = sizeof($url);   
-                if ($param > 1) {
-                    if($param > 2){               
-                        $controller->{$url[1]}($param);   
-                    }else{
-                        $controller->{$url[1]}();
-                    }            
-                }
+                                
             } else {
                 //require_once './view/error.php'; 
             }            
@@ -54,4 +46,14 @@ class App{
 
 }
 
+/* $param = sizeof($url);   
+                if ($param > 1) {
+                    if($param > 2){               
+                        $controller->{$url[1]}($param);   
+                    }else{
+                        $controller->{$url[1]}();
+                    }            
+                } */
+
 ?>
+

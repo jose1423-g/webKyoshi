@@ -50,12 +50,8 @@
             <div class="mb-5">
                 <input type="password" class="w-full rounded border-blue-500" name="pass_c" id="pass_c" placeholder="Confirmar Contraseña"> 
             </div>
-            <div class="mb-5">
-                <label class="block mb-2 font-semibold" for="fecha_n">Fecha de nacimiento</label>
-                <input type="date" class="w-full rounded border-blue-500" name="fecha_n" id="fecha_n"> 
-            </div>
             <div class="text-center mb-4">
-                <button class="bg-blue-600 p-2 font-semibold rounded text-white" type="submit">Registrarse</button>
+                <button class="bg-blue-600 p-2 w-full font-semibold rounded  text-white" type="submit">Registrarse</button>
             </div>
         </form>
     </div>
