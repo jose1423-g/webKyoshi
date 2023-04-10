@@ -8,10 +8,16 @@
 
     $op = $_REQUEST['op'];
 
-    if ($op == 'http://localhost/webkyoshi/main/'){
+    if ($op == 'http://localhost/webkyoshi/'){
         $data =  $obj->MenuAside();
         echo json_encode($data);
     }
+
+    if ($op == 'http://localhost/webkyoshi/main/#lluvia-de-ideas'){
+        $data =  $obj->load();
+        echo json_encode($data);
+    }
+
 
     if ($op == 'Lluvia de ideas') {
         $data = $obj->read($op);

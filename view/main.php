@@ -18,61 +18,53 @@
             </ul>
         </aside>
         <div class="lg:ml-80 ml-0 overflow-x-hidden">
-            <div class="flex max-lg:block lg:p-4 max-lg:w-screen">
+            <div class="flex max-lg:block lg:p-3 max-lg:w-screen w-full">
                 <div class="p-3">
-                    <h1 class="mb-8 text-5xl font-bold text-blue-600 max-lg:text-center">LLuvia de ideas</h1>
+                    <h1 class="mb-8 text-5xl font-bold text-blue-600 max-lg:text-center" id="Titulo_main"></h1>
                     <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-500 font-bold" id="">¿Qué es?</h1>
-                        <p id="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut hic quaerat ratione nobis saepe earum exercitationem eligendi accusantium aperiam, laboriosam doloribus ipsa ad dolorem minima non sunt quas a? Quis!</p>
+                        <h1 class="text-2xl mb-6 text-blue-600 font-bold" id="Que_es"></h1>
+                        <p id="Que_es_c"></p>
                     </div>
                     <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-500 font-bold" id="">¿Cómo se realiza?</h1>
-                        <ol class="list-disc pl-6" id="">
-                            <li>Se parte de una pregunta central acerca de un tema, una situación o un problema.</li>
+                        <h1 class="text-2xl mb-6 text-blue-600 font-bold" id="Como_se"></h1>
+                        <ol class="list-disc pl-6" id="Como_se_li">
+                            
                         </ol>
                     </div>
                     <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-500 font-bold">¿Para qué se utiliza?</h1>
-                        <h2>La técnica clasica de la lluvia de ideas</h2>
+                        <h1 class="text-2xl mb-6 text-blue-500 font-bold" id="Para_que"></h1>
+                        <h2 class="font-bold text-blue-600 mb-6" id="sub_para_que"></h2>
+                        <p id="para_que_c"></p>
                     </div>
                     <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-500 font-bold">Ejemplos</h1>
-                        <img src="../public/img_ejemplos/lluvia-de-ideas.png" alt="Lluvia de ideas">
+                        <h1 class="text-2xl mb-6 text-blue-600 font-bold">Ejemplos</h1>
+                        <div id="main_img">
+
+                        </div>
                     </div>
                 </div>
 
                 <!-- video -->
-                <aside class="w-96 p-2 max-lg:mb-20  max-lg:w-screen">
-                    <h1 class="text-2xl mb-6 text-blue-500 font-bold">Videos</h1>
-                    <iframe 
+                <aside class="w-1/2 p-2 max-lg:mb-20  max-lg:w-screen" id="aside_video">
+                    <h1 class="text-2xl mb-6 text-blue-600 font-bold">Videos</h1>
+                    <iframe
                         width="100%" 
                         height="290" 
-                        src="https://www.youtube.com/embed/GEo7W-uJNkc" 
+                         
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
                     </iframe>
-
-                   <!--  <iframe 
-                        width="260px" 
-                        height="160px" 
-                        src="https://www.youtube.com/embed/YPTYQ3yrpHw" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe> -->
-
                 </aside>
                 
             </div>
             <div class="p-4">
                 <div class="mb-20">
-                    <h1 class="text-2xl mb-6 text-blue-500 font-bold">Herramientas</h1>
+                    <h1 class="text-2xl mb-6 text-blue-600 font-bold">Herramientas</h1>
                 </div> 
                 <div class="mb-20">
-                    <h1 class="text-2xl mb-6 text-blue-500 font-bold">Fuentes</h1>
+                    <h1 class="text-2xl mb-6 text-blue-600 font-bold">Fuentes</h1>
                 </div>
             </div>
         </div>

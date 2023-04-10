@@ -1,5 +1,16 @@
 const url = "http://localhost/webkyoshi/";
 
+var url_actual = window.location;
+
+if (url_actual == 'http://localhost/webkyoshi/' || url_actual == 'http://localhost/webkyoshi/login' || url_actual == 'http://localhost/webkyoshi/registro') {
+
+} else {
+	if (window.performance.navigation.type == 1) {		
+		location.href = 'http://localhost/webkyoshi/main/#lluvia-de-ideas';
+	}
+}
+
+
 $(document).ready( function () {
 	/* CARGA INDEX */
     $.ajax({
@@ -38,13 +49,14 @@ $(document).ready( function () {
 		complete: function (data) {
 			
         }
-    });
+    });	
+
 	/* Menu Aside */
 	$.ajax({
         method:"POST",
         url: "http://localhost/webkyoshi/Controllers/mainController.php",
 		data:{
-			op: 'http://localhost/webkyoshi/main/',
+			op: 'http://localhost/webkyoshi/',
 		},
         success: function (data) {
 			var data =  JSON.parse(data);
@@ -55,16 +67,16 @@ $(document).ready( function () {
 			$.each(data, function (index, value) { 
 
 				if (value.id_menu <= 7) {
-				 	menu1 += '<li class="mb-3"><a class="hover:text-blue-600 pointer menu-get" data-id="'+value.texto+'" href="#'+value.texto+'">'+value.texto+'</a></li>';
+				 	menu1 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
 				} 
 				if (value.id_menu > 7 && value.id_menu <= 31) {
-					menu2 += '<li class="mb-3"><a class="hover:text-blue-600 pointer menu-get" data-id="'+value.texto+'">'+value.texto+'</a></li>';
+					menu2 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
 				}
 				if (value.id_menu > 31 && value.id_menu <= 36) {
-					menu3 += '<li class="mb-3"><a class="hover:text-blue-600 pointer menu-get" data-id="'+value.texto+'">'+value.texto+'</a></li>';
+					menu3 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
 				}
 				if (value.id_menu > 36 && value.id_menu <= 53) {
-					menu4 += '<li class="mb-3"><a class="hover:text-blue-600 pointer menu-get" data-id="'+value.texto+'">'+value.texto+'</a></li>';
+					menu4 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
 				}
 			});
 			$(".aside-menu1").html(menu1);
@@ -81,10 +93,43 @@ $(document).ready( function () {
         }
     });
 
-	/* var url_actual = window.location;
-		console.log(url_actual['href']);   */
+	//cuando ingresen al main lluvia de ideas de se carga
+	$.ajax({
+        method:"POST",
+        url: "http://localhost/webkyoshi/Controllers/mainController.php",
+		data:{
+			op: 'http://localhost/webkyoshi/main/#lluvia-de-ideas',
+		},
+		dataType: 'json',
+        success: function (data) {
+			var img_main = data[0].ruta_img;
 
-	$("#aside-menu li").on('click','.menu-get', function () {
+			$("#Titulo_main").text(data[0].Titulo);
+			$("#Que_es").text(data[0].Que);//pregunta
+			$("#Que_es_c").text(data[0].Que_es);
+			$("#Como_se").text(data[0].Como);//pregunta
+			$("#Como_se_li").html(data[0].Como_se);
+			$("#Para_que").text(data[0].Para);//pregunta
+			$("#sub_para_que").text(data[0].sub_para_que);
+			$("#para_que_c").html(data[0].Para_que);
+			$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
+			$("#aside_video").text(data[0].ruta_video);
+
+		},
+		error: function (jqXHR, estado, error) {
+            console.log(estado);
+            console.log(error);
+        },
+		complete: function (data) {
+			
+        }
+    });
+
+	/* var url_actual = window.location;
+		console.log(url_actual);   */
+
+	/* Carga contenido de la pagina principal */
+	$("#aside-menu li").on('click','.menu-get', function (event) {
 		var data = $(this).attr('data-id');
 		$.ajax({
 			method:"get",
@@ -95,9 +140,18 @@ $(document).ready( function () {
 			},
 			dataType: 'json',
 			success: function (data) {
-				//muestra de datos al main
-				console.log(data)
-				/* location = 'http://localhost/webkyoshi/main/'+data; */
+				var img_main = data[0].ruta_img;
+				$("#Titulo_main").text(data[0].Titulo);
+				$("#Que_es").text(data[0].Que);//pregunta
+				$("#Que_es_c").text(data[0].Que_es);
+				$("#Como_se").text(data[0].Como);//pregunta
+				$("#Como_se_li").text(data[0].Como_se);
+				$("#Para_que").text(data[0].Para);//pregunta
+				$("#sub_para_que").text(data[0].sub_para_que);
+				$("#para_que_c").text(data[0].Para_que);
+				$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
+				$("#aside_video").html(data[0].ruta_video);
+				
 			},
 			error: function (jqXHR, estado, error) {
 				console.log(estado);
