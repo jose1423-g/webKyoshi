@@ -103,6 +103,8 @@ $(document).ready( function () {
 		dataType: 'json',
         success: function (data) {
 			var img_main = data[0].ruta_img;
+			var ruta_video = data[0].ruta_video;
+			var frame_video =  '<iframe width="290" height="250" src="'+ruta_video+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
 			$("#Titulo_main").text(data[0].Titulo);
 			$("#Que_es").text(data[0].Que);//pregunta
@@ -113,7 +115,7 @@ $(document).ready( function () {
 			$("#sub_para_que").text(data[0].sub_para_que);
 			$("#para_que_c").html(data[0].Para_que);
 			$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
-			$("#aside_video").text(data[0].ruta_video);
+			$("#aside_video").html(frame_video);
 
 		},
 		error: function (jqXHR, estado, error) {
@@ -130,27 +132,44 @@ $(document).ready( function () {
 
 	/* Carga contenido de la pagina principal */
 	$("#aside-menu li").on('click','.menu-get', function (event) {
-		var data = $(this).attr('data-id');
+		var dato = $(this).attr('data-id');
 		$.ajax({
 			method:"get",
 			url: "http://localhost/webkyoshi/Controllers/mainController.php",
 			data:{
-				data: data,
-				op: data,
+				dato: dato,
+				op: dato,
 			},
 			dataType: 'json',
 			success: function (data) {
+				if (data == '') {
+					alert('El contenido de '+dato+' no se encuentra disponible en este momento');
+				}
 				var img_main = data[0].ruta_img;
+				var ruta_video = data[0].ruta_video;
+				var frame_video =  '<iframe width="290" height="300" src="'+ruta_video+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+
+				if (ruta_video == '') {
+					$('#aside_video').html('<h1 class="text-2xl mb-4 text-blue-600 font-bold text-center">Por el momento no contamos con un ejemplo Audio-Visual Gracias por su comprension</h1>')
+				} else {
+					$("#aside_video").html(frame_video);
+				}
+
+				if (img_main == '') {
+					$("#main_img").html('<h1 class="text-2xl mb-4 text-blue-600 font-bold text-center">Lo siento no contamos con ejemplo visual. Gracias por su comprension</h1>');
+				} else {
+					$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
+				}
+
 				$("#Titulo_main").text(data[0].Titulo);
 				$("#Que_es").text(data[0].Que);//pregunta
 				$("#Que_es_c").text(data[0].Que_es);
 				$("#Como_se").text(data[0].Como);//pregunta
-				$("#Como_se_li").text(data[0].Como_se);
+				$("#Como_se_li").html(data[0].Como_se);
 				$("#Para_que").text(data[0].Para);//pregunta
 				$("#sub_para_que").text(data[0].sub_para_que);
-				$("#para_que_c").text(data[0].Para_que);
-				$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
-				$("#aside_video").html(data[0].ruta_video);
+				$("#para_que_c").html(data[0].Para_que);
+				
 				
 			},
 			error: function (jqXHR, estado, error) {

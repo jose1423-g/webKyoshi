@@ -2,7 +2,7 @@
 <!-- max-w-max -->
     <main class="flex overflow-x-hidden bg-white w-full">
         <aside class="bg-white w-80 fixed hidden lg:block lg:fixed top-20 z-20 overflow-y-scroll inset-0 max-lg:shadow-lg" id="drop-aside">
-            <ul class="pl-4 py-4" id="aside-menu">
+            <ul class="pl-5 py-4" id="aside-menu">
                 <!-- <h1 class="text-blue-600 text-3xl font-bold mb-3">Contenido</h1> -->
                 <h1 class="font-bold mb-3 text-blue-600">Conocimientos Previos</h1>
                 <li class="aside-menu1"></li>
@@ -18,64 +18,49 @@
             </ul>
         </aside>
         <div class="lg:ml-80 ml-0 overflow-x-hidden">
-            <div class="flex max-lg:block lg:p-3 max-lg:w-screen w-full">
+            <div class="flex max-xl:block lg:p-3 max-lg:w-screen w-full">
                 <div class="p-3">
                     <h1 class="mb-8 text-5xl font-bold text-blue-600 max-lg:text-center" id="Titulo_main"></h1>
-                    <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-600 font-bold" id="Que_es"></h1>
+                    
+                    <div class="mb-10 max-w-7xl">
+                        <h1 class="text-3xl mb-4 text-blue-600 font-bold" id="Que_es"></h1>
                         <p id="Que_es_c"></p>
                     </div>
-                    <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-600 font-bold" id="Como_se"></h1>
-                        <ol class="list-disc pl-6" id="Como_se_li">
-                            
-                        </ol>
-                    </div>
-                    <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-500 font-bold" id="Para_que"></h1>
-                        <h2 class="font-bold text-blue-600 mb-6" id="sub_para_que"></h2>
-                        <p id="para_que_c"></p>
-                    </div>
-                    <div class="mb-20">
-                        <h1 class="text-2xl mb-6 text-blue-600 font-bold">Ejemplos</h1>
-                        <div id="main_img">
 
+                    <div class="mb-10 max-w-7xl">
+                        <h1 class="text-3xl mb-4 text-blue-600 font-bold" id="Como_se"></h1>
+                        <ul class="list-disc pl-4 leading-7" id="Como_se_li"></ul>
+                    </div>
+
+                    <div class="mb-10 max-w-7xl">
+                        <h1 class="text-3xl mb-4 text-blue-600 font-bold" id="Para_que"></h1>
+                        <h2 class="text-xl font-bold text-blue-600 mb-4" id="sub_para_que"></h2>
+                        <ul class="list-disc pl-4 leading-6" id="para_que_c"></ul>
+                    </div>
+
+                    <div class="mb-10 max-w-7xl">
+                        <h1 class="text-3xl mb-4 text-blue-600 font-bold">Ejemplos</h1>
+                        <div class="cursor-pointer" id="main_img">
                         </div>
                     </div>
                 </div>
-
                 <!-- video -->
-                <aside class="w-1/2 p-2 max-lg:mb-20  max-lg:w-screen" id="aside_video">
-                    <h1 class="text-2xl mb-6 text-blue-600 font-bold">Videos</h1>
-                    <iframe
-                        width="100%" 
-                        height="290" 
-                         
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </aside>
-                
+                <aside class="w-1/2 p-2 max-lg:mb-12 max-lg:w-screen">
+                    <h1 class="text-3xl mb-4 text-blue-600 font-bold">Videos</h1>
+                    <div id="aside_video">
+
+                    </div>
+                </aside> 
             </div>
-            <div class="p-4">
-                <div class="mb-20">
-                    <h1 class="text-2xl mb-6 text-blue-600 font-bold">Herramientas</h1>
+            <div class="p-5">
+                <div class="mb-10">
+                    <h1 class="text-2xl mb-4 text-blue-600 font-bold">Herramientas</h1>
                 </div> 
-                <div class="mb-20">
-                    <h1 class="text-2xl mb-6 text-blue-600 font-bold">Fuentes</h1>
+                <div class="mb-10">
+                    <h1 class="text-2xl mb-4 text-blue-600 font-bold">Fuentes</h1>
                 </div>
             </div>
-        </div>
-
-
-    
-
-
-
-
-
+        </div>    
     </main>
 
     <?php  include './view/components/footer.php';?>
