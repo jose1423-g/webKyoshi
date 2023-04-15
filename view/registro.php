@@ -23,7 +23,7 @@
         </div>
         <div></div>
         <div>
-            <a class="font-bold text-blue-600" href="<?php echo constant('url') ?>login">Iniciar sesíon</a>
+            <a class="font-bold text-blue-600" href="<?php echo constant('url') ?>login/">Iniciar sesíon</a>
         </div>
     </header>    
     

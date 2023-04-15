@@ -1,21 +1,25 @@
 <?php 
 
+require_once (__DIR__.'/../Models/loginmodel.php');
+
 
 class loginController{
 
+    public $obj;
+    public $dato;
+
     function __construct(){
-        //echo "<br> Soy el Controller login<br>";
+        $this->obj = new loginModel;
     }
 
-    public function main(){
-        //echo "<br> Soy la funcion o metodo del controller main  ejecutado al entrar<br>";
+    public function login(){
     }
 
     public function holis(){
         echo "Soy la funcion mainBuscar del controller main <br>";
     }
 
-    public function saludo($id){
+    public function saludo(){
         echo "funcion con parametros <br>";
     }
 

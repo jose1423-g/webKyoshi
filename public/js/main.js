@@ -1,82 +1,30 @@
-const url = "http://localhost/webkyoshi/";
-
-var url_actual = window.location;
-
-if (url_actual == 'http://localhost/webkyoshi/' || url_actual == 'http://localhost/webkyoshi/login' || url_actual == 'http://localhost/webkyoshi/registro') {
-
-} else {
-	if (window.performance.navigation.type == 1) {		
-		location.href = 'http://localhost/webkyoshi/main/#lluvia-de-ideas';
-	}
-}
-
-
 $(document).ready( function () {
-	/* CARGA INDEX */
-    $.ajax({
+	var url = window.location;
+	/* Menu Aside */
+	$.ajax({
         method:"POST",
-        url: "http://localhost/webkyoshi/Controllers/indexController.php",
+        url: "http://localhost/webkyoshi/libs/route.php",
 		data:{
 			op: 'http://localhost/webkyoshi/',
 		},
 		dataType: 'json',
         success: function (data) {
-			img =  url + data[0].Img;
-			/*Inicio*/
-			$("#Titulo1").text(data[0].Titulo);
-			$("#Contenido1").text(data[0].Contenido);
-			$("#content-img1").html('<img src="'+img+'" alt="icon-index" class="img">');
-			/*Explora*/
-			$("#Titulo2").text(data[1].Titulo);
-			$("#Contenido2").text(data[1].Contenido);
-			/*planes*/
-			$("#Titulo3").text(data[2].Titulo);
-			$("#Contenido3").text(data[2].Contenido);
-			$("#content-img3").html('<img src="'+img+'" alt="icon-index" class="img">');
-			/*+Premium*/
-			$("#Titulo4").text(data[3].Titulo);
-			$("#Contenido4").text(data[3].Contenido);
-			/*+Recursos*/
-			$("#Titulo5").text(data[4].Titulo);
-			$("#Contenido5").text(data[4].Contenido);
-			$("#content-img5").html('<img src="'+img+'" alt="icon-index" class="img">');
-			
-		},
-		error: function (jqXHR, estado, error) {
-            console.log(estado);
-            console.log(error);
-        },
-		complete: function (data) {
-			
-        }
-    });	
-
-	/* Menu Aside */
-	$.ajax({
-        method:"POST",
-        url: "http://localhost/webkyoshi/Controllers/mainController.php",
-		data:{
-			op: 'http://localhost/webkyoshi/',
-		},
-        success: function (data) {
-			var data =  JSON.parse(data);
 			var menu1 = "";
 			var menu2 = "";
 			var menu3 = "";
 			var menu4 = "";
 			$.each(data, function (index, value) { 
-
 				if (value.id_menu <= 7) {
-				 	menu1 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
+					menu1 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
 				} 
 				if (value.id_menu > 7 && value.id_menu <= 31) {
-					menu2 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
+					menu2 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
 				}
 				if (value.id_menu > 31 && value.id_menu <= 36) {
-					menu3 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
+					menu3 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
 				}
 				if (value.id_menu > 36 && value.id_menu <= 53) {
-					menu4 += '<li class="mb-3"><a class="hover:text-blue-600  menu-get" data-id="'+value.texto+'" href="#'+value.href+'">'+value.texto+'</a></li>';
+					menu4 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
 				}
 			});
 			$(".aside-menu1").html(menu1);
@@ -93,124 +41,10 @@ $(document).ready( function () {
         }
     });
 
-	//cuando ingresen al main lluvia de ideas de se carga
-	$.ajax({
-        method:"POST",
-        url: "http://localhost/webkyoshi/Controllers/mainController.php",
-		data:{
-			op: 'http://localhost/webkyoshi/main/#lluvia-de-ideas',
-		},
-		dataType: 'json',
-        success: function (data) {
-			var img_main = data[0].ruta_img;
-			var ruta_video = data[0].ruta_video;
-			var frame_video =  '<iframe width="290" height="250" src="'+ruta_video+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-
-			$("#Titulo_main").text(data[0].Titulo);
-			$("#Que_es").text(data[0].Que);//pregunta
-			$("#Que_es_c").text(data[0].Que_es);
-			$("#Como_se").text(data[0].Como);//pregunta
-			$("#Como_se_li").html(data[0].Como_se);
-			$("#Para_que").text(data[0].Para);//pregunta
-			$("#sub_para_que").text(data[0].sub_para_que);
-			$("#para_que_c").html(data[0].Para_que);
-			$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
-			$("#aside_video").html(frame_video);
-
-		},
-		error: function (jqXHR, estado, error) {
-            console.log(estado);
-            console.log(error);
-        },
-		complete: function (data) {
-			
-        }
-    });
-
-	/* var url_actual = window.location;
-		console.log(url_actual);   */
-
-	/* Carga contenido de la pagina principal */
-	$("#aside-menu li").on('click','.menu-get', function (event) {
-		var dato = $(this).attr('data-id');
-		$.ajax({
-			method:"get",
-			url: "http://localhost/webkyoshi/Controllers/mainController.php",
-			data:{
-				dato: dato,
-				op: dato,
-			},
-			dataType: 'json',
-			success: function (data) {
-				if (data == '') {
-					alert('El contenido de '+dato+' no se encuentra disponible en este momento');
-				}
-				var img_main = data[0].ruta_img;
-				var ruta_video = data[0].ruta_video;
-				var frame_video =  '<iframe width="290" height="300" src="'+ruta_video+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-
-				if (ruta_video == '') {
-					$('#aside_video').html('<h1 class="text-2xl mb-4 text-blue-600 font-bold text-center">Por el momento no contamos con un ejemplo Audio-Visual Gracias por su comprension</h1>')
-				} else {
-					$("#aside_video").html(frame_video);
-				}
-
-				if (img_main == '') {
-					$("#main_img").html('<h1 class="text-2xl mb-4 text-blue-600 font-bold text-center">Lo siento no contamos con ejemplo visual. Gracias por su comprension</h1>');
-				} else {
-					$("#main_img").html('<img id="main_img" src="'+img_main+'" alt="">');
-				}
-
-				$("#Titulo_main").text(data[0].Titulo);
-				$("#Que_es").text(data[0].Que);//pregunta
-				$("#Que_es_c").text(data[0].Que_es);
-				$("#Como_se").text(data[0].Como);//pregunta
-				$("#Como_se_li").html(data[0].Como_se);
-				$("#Para_que").text(data[0].Para);//pregunta
-				$("#sub_para_que").text(data[0].sub_para_que);
-				$("#para_que_c").html(data[0].Para_que);
-				
-				
-			},
-			error: function (jqXHR, estado, error) {
-				console.log(estado);
-				console.log(error);
-			},
-			complete: function (data) {
-				
-			}
-		});
-	}); 
-
-	//Explora contenido dinamico
-	$(".contenido-dinamico").on('click', function () {
-		var data = $(this).attr('data-id');
-		/* alert(data); */
-		$.ajax({
-			method:"POST",
-			url: "http://localhost/webkyoshi/Controllers/indexController.php",
-			data:{
-				data: data,
-				op: data,
-			},
-			dataType: 'json',
-			success: function (data) {
-				console.log(data);
-			},
-			error: function (jqXHR, estado, error) {
-				console.log(estado);
-				console.log(error);
-			},
-			complete: function (data) {
-				
-			}
-		});
-	});
-
 	//LOCATION HREF
 	//location login
 	$("#btn-login").on('click', function (){
-		window.location.href = url+"login";
+		window.location.href = "http://localhost/webkyoshi/login/";
 	});
 	//location registro
 	$("#btn-register").on('click', function (){
@@ -265,7 +99,4 @@ $(document).ready( function () {
 	$("#aside-menu li").on('click', '.menu-get', function(){
 		$("#drop-aside").addClass('hidden');		
 	});
-	
-
 });
-

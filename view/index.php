@@ -26,21 +26,19 @@
                 </ul>
                 <div class="p-4 rounded border">
                     <div class="mb-4 w-4/6 max-lg:w-full">
-                        <h3 class="text-3xl font-semibold mb-4" id="">Conocimeintos previos</h3>
-                        <p>Las estrategias de enseñanza-aprendizaje son instrumentos de los que se vale el docente 
-                        para contribuir a la implementación y el desarrollo de las competencias de los estudiantes. Con base en una secuencia didáctica
-                        que incluye inicio, desarrollo y cierre, es conveniente utilizar estas estrategias de forma permanente tomando en cuenta las 
-                        competencias específicas que pretendemos contribuir a desarrollar</p>
+                        <h3 class="text-3xl font-semibold mb-4" id="Titulo-explora"></h3>
+                        <p id="Contenido-explora"></p>
                     </div>
-                    <div class="p-4 flex border-t" id="">
+                    <div class="p-4 flex border-t" id="content-card-explora">
                         <!-- card -->
-                        <div class="bg-white rounded shadow-lg w-72 mr-3">
+                        <!-- <div class="bg-white rounded shadow-lg w-72 mr-3">
                             <img src="https://www.kibocompany.com/wp-content/uploads/2020/03/Tiempo-de-preguntas-01-400x400.jpg" alt="">
                             <div class="block p-2">  
                                 <h1 class="text-2xl font-semibold mb-3">Holis</h1>
                                 <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
                             </div>
-                        </div>
+                        </div> -->
+
                     </div>
                 </div>
             </div>

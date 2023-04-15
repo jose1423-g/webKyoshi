@@ -2,7 +2,7 @@
 
     require_once (__DIR__.'/../libs/conection.php');
 
-    class indexModel{
+    class registroModel{
 
         private $link;
 

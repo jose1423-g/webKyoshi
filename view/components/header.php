@@ -44,8 +44,9 @@
                                 <li><a class="hover:text-blue-600" href="#">Rubricas</a></li>
                             </ul>
                         </li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Recursos del aula</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Tienda</a></li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/#lluvia-de-ideas">Contenido</a></li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
                     </ul>
                     <div class="max-lg:border-t max-lg:p-2">
                         <button type="button" class="mr-2 font-semibold rounded-md p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>

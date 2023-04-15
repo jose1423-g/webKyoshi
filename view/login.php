@@ -41,7 +41,7 @@
                 <button class="hover:bg-blue-500  w-40 font-semibold bg-blue-600 p-2 rounded text-white" type="submit">Iniciar Sesíon</button>
             </div>
             <div class="text-center">
-                <a class="text-blue-600 font-semibold" href="<?php echo constant('url')?>registro">Registrarse</a>
+                <a class="text-blue-600 font-semibold" href="<?php echo constant('url')?>registro/">Registrarse</a>
             </div>
         </form>
     </div>
