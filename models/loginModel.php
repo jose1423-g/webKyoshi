@@ -10,7 +10,7 @@ require_once (__DIR__.'/../libs/conection.php');
             $this->link = new  conection;
             $this->link = $this->link->conect();
         }
-
+        
         function indexmodel(){
             $qry = "SELECT indexId, Titulo, Contenido, Img, Activo FROM contenido_index";
             $pre = mysqli_prepare($this->link, $qry);

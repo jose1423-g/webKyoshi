@@ -41,6 +41,31 @@ $(document).ready( function () {
         }
     });
 
+	$.ajax({
+        method:"POST",
+        url: "http://localhost/webkyoshi/libs/route.php",
+		data:{
+			op: 'http://localhost/webkyoshi/preguntas',
+		},
+		dataType: 'json',
+        success: function (data) {
+			console.log(data);
+			var card = "";
+			$.each(data, function (index, value) { 
+				card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="main/'+value.href+'">Explora más</a></button></div></div>';
+				console.log(value.Titulo +'   '+value.href +''+value.ruta_img);
+			});	
+			$("#explora").html(card);
+		},
+		error: function (jqXHR, estado, error) {
+            console.log(estado);
+            console.log(error);
+        },
+		complete: function (data) {
+			
+        }
+    });
+
 	//LOCATION HREF
 	//location login
 	$("#btn-login").on('click', function (){
@@ -48,11 +73,11 @@ $(document).ready( function () {
 	});
 	//location registro
 	$("#btn-register").on('click', function (){
-		window.location.href = url+"registro";
+		window.location.href = "http://localhost/webkyoshi/registro/";
 	});
 	//location main
 	$(".btn-main").on('click', function (){
-		window.location.href = url+"main";
+		window.location.href = "http://localhost/webkyoshi/main/lluvia_de_ideas";
 	});
 
 	//despliegue de menu

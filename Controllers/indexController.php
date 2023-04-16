@@ -20,6 +20,11 @@
                 $data = $this->obj->aside_menu();
                 return $data;
             }
+
+            function explora(){
+                $data = $this->obj->explora();
+                return $data;
+            }
     
         }   
 

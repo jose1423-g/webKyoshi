@@ -28,7 +28,7 @@
 
                     <div class="mb-10 max-w-7xl">
                         <h1 class="text-3xl mb-4 text-blue-600 font-bold">Ejemplos</h1>
-                        <img src="<?php  echo $row['ruta_img'] ?>" alt="">
+                        <img src="<?php  echo constant('url').$row['ruta_img'] ?>" alt="">
                     </div>
                 </div>
                 <!-- video -->
