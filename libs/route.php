@@ -15,7 +15,7 @@
         echo json_encode($data);        
         //echo json_encode("si entro a preguntas");
         exit();
-    } elseif($op == ''){
+    } elseif($op == 'http://localhost/webkyoshi/Diagramas'){
 
     }
 
