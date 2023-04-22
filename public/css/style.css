@@ -8,3 +8,22 @@ body{
 .pointer{
     cursor: pointer;
 }
+
+.disabled{
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+#icon-search {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    padding: 15px 15px 15px 30px;
+    /*   background-size: 24px;
+    width: 500px;
+    border: transparent;
+    border-bottom: solid 1px #ccc; 
+    outline: none; */
+}
+
+.result-search{ 
+    height: 200px;
+}

@@ -43,21 +43,12 @@
                 </div>
                 <div class="max-lg:hidden">
                     <ul class="font-semibold flex mb-3">
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Preguntas">Preguntas</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Diagramas">Diagramas</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Mapascognitivos">Mapas cognitivos</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer" data-id="Estrategiasgrupales">Estrategias grupales</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="preguntas">Preguntas</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="cuadro sinoptico">Diagramas</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Mapascognitivos">Mapas cognitivos</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Estrategiasgrupales">Estrategias grupales</a></li>
                     </ul>
-                    <div class="p-4 flex justify-center rounded border" id="explora">
-                        <!-- card -->
-                        <!-- <div class="bg-white rounded shadow-xl w-72 mx-3">
-                            <img class="w-full" src="./public/img/prueba.png" alt="">
-                            <div class="block p-2">  
-                                <h1 class="text-2xl font-semibold mb-3">Holis</h1>
-                                <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="">Explorar más</a></button>
-                            </div>
-                        </div> -->
-                    </div>
+                    <div class="p-4 flex justify-center rounded border" id="explora"></div>
                 </div>
                 <!-- contenido mobil -->
                 <div class="flex justify-center flex-wrap border-t border-blue-600 lg:hidden">
@@ -119,22 +110,14 @@
                         <li class="mx-2 hover:text-blue-600"><a href="#">Casos</a></li>
                         <li class="mx-2 hover:text-blue-600"><a href="#">Infografias</a></li>
                     </ul>
-                    <div class="p-4 rounded border">
-                        <!-- contenido dinamico -->
-                        <div class="mb-2">
-                            <h3 class="text-3xl font-semibold mb-4" id="">Recursos</h3>
-                            <button class="p-1 bg-blue-600 rounded text-white font-semibold">Explorar más</button>
-                        </div>
-                        <div class="p-4 flex border-t" id="">
-                            <!-- card -->
-                            <div class="bg-white rounded shadow-lg w-72 mr-3">
-                                <img src="<?php echo constant('url'); ?>public/img/premium.png" alt="">
-                                <div class="block p-2">  
-                                    <h1 class="text-2xl font-semibold mb-3">holas</h1>
-                                    <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
-                                </div>
+                    <div class="flex justify-center p-4 rounded border">
+                        <!-- card -->
+                        <div class="bg-white rounded shadow-lg w-72 mr-3">
+                            <img src="<?php echo constant('url'); ?>public/img/premium.png" alt="">
+                            <div class="block p-2">  
+                                <h1 class="text-2xl font-semibold mb-3">holas</h1>
+                                <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
                             </div>
-
                         </div>
                     </div>
                 </div>

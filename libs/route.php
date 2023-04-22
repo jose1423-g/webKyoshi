@@ -6,17 +6,26 @@
     $main = new mainController;
 
     $op = $_REQUEST['op'];
+    $resp = $_REQUEST['resp'];
     
     if ($op == 'http://localhost/webkyoshi/') {
         $data = $index->menu();
         echo json_encode($data);
-    } elseif ($op == 'http://localhost/webkyoshi/preguntas'){
+    } elseif ($op == 'preguntas'){
         $data = $index->explora();
         echo json_encode($data);        
-        //echo json_encode("si entro a preguntas");
         exit();
-    } elseif($op == 'http://localhost/webkyoshi/Diagramas'){
-
+    } elseif($op == 'cuadro sinoptico'){  
+        //echo json_encode($op);        
+        $data = $index->search_explora($op);
+        echo json_encode($data);        
+        exit();
     }
+    
+    if ($op  == 'search') {
+        $data = $index->search($resp);
+        echo json_encode($data);
+    }
+
 
 ?>

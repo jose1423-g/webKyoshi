@@ -5,6 +5,7 @@
     class indexModel{
 
         private $link;
+        private $dato;
     
         function __construct(){
             $this->link = new conection;
@@ -18,7 +19,7 @@
         }
     
         function aside_menu(){
-            $qry = "SELECT id_menu, href, texto FROM menu";
+            $qry = "SELECT id_menu, href, texto, estatus FROM menu ";
             $pre =  mysqli_prepare($this->link, $qry);
             $pre->execute();
                 $resp = $pre->get_result();
@@ -46,35 +47,29 @@
 
         }
 
-        function search_explora(){
+        function search_explora($dato){
             $qry = "SELECT t1.Titulo, t2.href, t3.ruta AS ruta_img
             FROM contenido t1 
             LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
             LEFT JOIN menu t2 ON t1.id_contenido = t2.id_contenido 
-            WHERE Titulo LIKE '%%'; "; 
+            WHERE Titulo LIKE '%$dato%'"; 
             $resp = mysqli_query($this->link, $qry);
             $data = array();
             while ($obj = $resp->fetch_object()) {
                 array_push($data, $obj);
             }   
             return $data;
-
         }
 
+        function search($dato){
+            $qry = "SELECT texto, href FROM menu WHERE texto LIKE '%$dato%' AND estatus = 1"; 
+            $resp = mysqli_query($this->link, $qry);
+            $data = array();
+            while ($obj = $resp->fetch_object()) {
+                array_push($data, $obj);
+            }   
+            return $data;
+        }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

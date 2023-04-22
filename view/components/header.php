@@ -28,14 +28,14 @@
             </div>
             <div class="flex items-center">
                 <div class="flex items-center">
-                    <a class="" href="#"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
-                    <a class="mx-3" href="#"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
+                    <a class="buscador pointer"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
+                    <a class="mx-3 pointer"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
                     <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/pointmenu.png" alt="" width="45px"></img></button>
                 </div>
                 <div class="flex items-center max-lg:shadow max-lg:block max-lg:hidden max-lg:p-3 max-lg:bg-white max-lg:w-full max-lg:top-20 max-lg:start-0 max-lg:absolute menu-drop">
                     <ul class="block font-semibold lg:flex">
                         <li class="max-lg:mb-2 mx-3"><a class="hover:text-blue-600 pointer" id="toggle-menu">Recursos<i class="fa-sharp fa-solid fa-caret-down ml-1"></i></a>
-                            <ul class="bg-white pl-3 max-lg:list-disc lg:p-3 lg:absolute  lg:z-30 top-14 lg:shadow-md rounded hidden dropdown-menu">
+                            <ul class="bg-white pl-6 max-lg:list-disc lg:p-3 lg:absolute lg:z-40 top-14 lg:shadow-md rounded hidden dropdown-menu">
                                 <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
                                 <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
                                 <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
@@ -44,6 +44,7 @@
                                 <li><a class="hover:text-blue-600" href="#">Rubricas</a></li>
                             </ul>
                         </li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>premium/">Premium</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Recursos del aula</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Tienda</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
@@ -57,3 +58,19 @@
         </div>    
     </div>
 </header>
+<div class="w-full h-screen z-20 bg-white fixed top-20 hidden" id="content-search">
+    <div class="container mx-auto p-2">
+        <div class="flex justify-end">
+            cerrar
+        </div>
+        <div class="flex justify-center">
+            <form action="" method="post" class="w-4/6">
+                <input type="search" class="w-full h-10 border-2 border-blue-600 rounded border-blue-500 mb-2" placeholder="Buscar estrategia" id="icon-search">
+                <div class="p-3 rounded result-search overflow-y-auto" id="result-search">
+                    holis
+                </div>
+            </form>
+        </div>
+    
+    </div>
+</div>
