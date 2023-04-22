@@ -15,13 +15,12 @@
         $data = $index->explora();
         echo json_encode($data);        
         exit();
-    } elseif($op == 'cuadro sinoptico'){  
-        //echo json_encode($op);        
-        $data = $index->search_explora($op);
+    } elseif($op == 'search_explora'){  
+        $data = $index->search_explora($resp);
         echo json_encode($data);        
         exit();
     }
-    
+
     if ($op  == 'search') {
         $data = $index->search($resp);
         echo json_encode($data);

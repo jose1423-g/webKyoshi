@@ -90,8 +90,8 @@ $(document).ready( function () {
 			method:"POST",
 			url: "http://localhost/webkyoshi/libs/route.php",
 			data:{
-				data: data,
-				op: data,
+				resp: data,
+				op: 'search_explora',
 			},
 			dataType: 'json',
 			success: function (data) {
@@ -189,7 +189,7 @@ $(document).ready( function () {
 			method:"POST",
 			url: "http://localhost/webkyoshi/libs/route.php",
 			data:{
-				resp: consulta,
+				resp: consulta,	
 				op: 'search',
 			},
 			dataType: 'json',
