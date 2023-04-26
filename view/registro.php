@@ -28,15 +28,15 @@
     </header>    
     
     <div class="mt-20 p-2 flex justify-center">
-        <form class="bg-white w-96 rounded p-3 shadow-lg"  action="" method="POST" id="">
+        <form class="bg-white w-96 rounded p-3 shadow-lg"  action="#" method="POST" id="form-registro">
             <div class="mb-5 text-center">
                 <h1 class="text-3xl font-bold text-blue-600">Sign up</h1>
             </div>
             <div class="mb-4">
-                <input type="text" class="w-full rounded border-blue-500" name="apellido" id="apellido" placeholder="Apellido"> 
+                <input type="text" class="w-full rounded border-blue-500" name="apellidos" id="apellidos" placeholder="Apellidos"> 
             </div>
             <div class="mb-4">
-                <input type="text" class="w-full rounded border-blue-500" name="nombre" id="nombre" placeholder="Nombre"> 
+                <input type="text" class="w-full rounded border-blue-500" name="nombres" id="nombres" placeholder="Nombres"> 
             </div>
             <div class="mb-4">
                 <input type="text" class="w-full rounded border-blue-500" name="nombre_user" id="nombre_user" placeholder="User name"> 
@@ -48,10 +48,10 @@
                 <input type="password" class="w-full rounded border-blue-500" name="pass" id="pass" placeholder="Contraseña"> 
             </div>
             <div class="mb-5">
-                <input type="password" class="w-full rounded border-blue-500" name="pass_c" id="pass_c" placeholder="Confirmar Contraseña"> 
+                <input type="password" class="w-full rounded border-blue-500" name="pass_conf" id="pass_conf" placeholder="Confirmar Contraseña"> 
             </div>
             <div class="text-center mb-4">
-                <button class="bg-blue-600 p-2 w-full font-semibold rounded  text-white" type="submit">Registrarse</button>
+                <button class="bg-blue-600 p-2 w-full font-semibold rounded text-white" type="submit" id="btn-registro">Registrarse</button>
             </div>
         </form>
     </div>

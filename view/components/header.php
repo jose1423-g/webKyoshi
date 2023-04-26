@@ -60,14 +60,16 @@
 </header>
 <div class="w-full h-screen z-20 bg-white fixed top-20 hidden" id="content-search">
     <div class="container mx-auto p-2">
-        <div class="flex justify-end">
-            cerrar
+        <div class="flex justify-end mb-5">
+            <button type="button" id="close-search"><img src="<?php echo constant('url');?>public/img/closemenu.png" alt="close-search" width="40px"></button>
         </div>
         <div class="flex justify-center">
-            <form action="" method="post" class="w-4/6">
+            <form action="#" method="post" class="w-4/6" id="form-search">
                 <input type="search" class="w-full h-10 border-2 border-blue-600 rounded border-blue-500 mb-2" placeholder="Buscar estrategia" id="icon-search">
-                <div class="p-3 rounded result-search overflow-y-auto" id="result-search">
-                    holis
+                <h1 class="font-semibold text-2xl">Resultados</h1>
+                <div class="p-3 rounded result-search overflow-y-auto">
+                    <ul id="result-search">
+                    </ul>
                 </div>
             </form>
         </div>

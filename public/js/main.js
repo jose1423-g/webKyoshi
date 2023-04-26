@@ -1,5 +1,6 @@
 $(document).ready( function () {
 	var url = window.location;
+	const url_const = "http://localhost/webkyoshi/main/"
 	/* Menu Aside */
 	$.ajax({
         method:"POST",
@@ -58,7 +59,7 @@ $(document).ready( function () {
 			
         }
     });
-
+	//carga inicial con el index
 	$.ajax({
         method:"POST",
         url: "http://localhost/webkyoshi/libs/route.php",
@@ -71,7 +72,7 @@ $(document).ready( function () {
 			//console.log(data);
 			var card = "";
 			$.each(data, function (index, value) { 
-				card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="main/'+value.href+'">Explora más</a></button></div></div>';
+				card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
 			});	
 			$("#explora").html(card);
 		},
@@ -84,6 +85,7 @@ $(document).ready( function () {
         }
     });
 
+	//funcion para refrescar el explora
 	$(".search_explora").on('click', function(){
 	 	var data = $(this).attr('data-id');
 		$.ajax({
@@ -95,11 +97,9 @@ $(document).ready( function () {
 			},
 			dataType: 'json',
 			success: function (data) {
-				console.log(data);
 				var card = "";
 				$.each(data, function (index, value) { 
-					card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="main/'+value.href+'">Explora más</a></button></div></div>';
-					console.log(value.Titulo +'   '+value.href +''+value.ruta_img);
+					card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
 				});	
 				$("#explora").html(card);
 			},
@@ -168,10 +168,9 @@ $(document).ready( function () {
 		$("#drop-aside").addClass('hidden');		
 	});
 
-	//funcion para mostrat el buscador
+	//funcion para mostrar y cerrar el buscador con la imagen del search
 	$(".buscador").on('click', function(){
 		/* $("#drop-aside").toggle('slow'); */
-		
 		if($("#content-search").hasClass('hidden')){
 			$("#content-search").removeClass('hidden');
 			$("body").addClass('overflow-hidden');		
@@ -181,10 +180,28 @@ $(document).ready( function () {
 		}
 	});
 
+	//funcion para solo cerrar el buscador con la imagen close
+	$("#close-search").on('click', function(){
+		/* $("#drop-aside").toggle('slow'); */
+		if($("#content-search").hasClass('hidden')){
+			$("#content-search").removeClass('hidden');
+			$("body").addClass('overflow-hidden');		
+		} else {
+			$("#content-search").addClass('hidden');
+			$("body").removeClass('overflow-hidden');
+		}
+	});
+	
+	//funcion para deshabilitar el enter en el buscador
+	$("#form-search").keypress(function(e) {
+        if (e.which == 13) {
+            return false;
+        }
+    });
+	
 	//FUNTION SEARCH
 	$("#icon-search").keyup(function () { 
 		var consulta = $("#icon-search").val();
-		console.log(consulta);
 		$.ajax({
 			method:"POST",
 			url: "http://localhost/webkyoshi/libs/route.php",
@@ -195,12 +212,11 @@ $(document).ready( function () {
 			dataType: 'json',
 			success: function (data) {
 				console.log(data);
-				/* var card = "";
+				var search = "";
 				$.each(data, function (index, value) { 
-					card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="main/'+value.href+'">Explora más</a></button></div></div>';
-					console.log(value.Titulo +'   '+value.href +''+value.ruta_img);
+					search += '<li class="p-2 hover:bg-blue-600 hover:text-white hover:font-bold"><a class="" href="'+url_const+value.href+'">'+value.texto+'</a></li>';
 				});	
-				$("#explora").html(card); */
+				$("#result-search").html(search);
 			},
 			error: function (jqXHR, estado, error) {
 				console.log(estado);
@@ -212,6 +228,34 @@ $(document).ready( function () {
 		});
 	});
 
+	//envio de formularios
+	$("#btn-registro").on('click', function (event) {
+
+		$.ajax({
+			method:"POST",
+			url: "http://localhost/webkyoshi/libs/route.php",
+			data:{
+				op: 'registro',
+			},
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+				/* var search = "";
+				$.each(data, function (index, value) { 
+					search += '<li class="p-2 hover:bg-blue-600 hover:text-white hover:font-bold"><a class="" href="'+url_const+value.href+'">'+value.texto+'</a></li>';
+				});	
+				$("#result-search").html(search); */
+			},
+			error: function (jqXHR, estado, error) {
+				console.log(estado);
+				console.log(error);
+			},
+			complete: function (data) {
+				
+			}
+		});
+		event.preventDefault();
+	});
 
 
 });

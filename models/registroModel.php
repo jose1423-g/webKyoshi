@@ -10,21 +10,15 @@
             $this->link = new  conection;
             $this->link = $this->link->conect();
         }
-
-        function indexmodel(){
-            $qry = "SELECT indexId, Titulo, Contenido, Img, Activo FROM contenido_index";
-            $pre = mysqli_prepare($this->link, $qry);
-            $pre->execute();
-            $resp = $pre->get_result();
-
-            $data = array();
-
-            while ($obj = $resp->fetch_object()) {
-                array_push($data, $obj);
-            }
+        
+        function agregar($apellidos, $nombres, $username, $email, $pass, $fecha_hoy){
+            $qry = "INSERT INTO usuarios(Apellidos, Nombre, name_user, Email, Pass, fecha_registro, Activo)VALUES('$apellidos','$nombres','$username','$email','$pass','$fecha_hoy','1')";
+            $data = mysqli_query($this->link, $qry);
             return $data;
         }
        
+
+
     }
 
 
