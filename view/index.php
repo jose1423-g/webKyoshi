@@ -1,4 +1,4 @@
-    <?php  include './view/components/header.php';?>
+<?php  include './view/components/header.php';?>
     <?php while ($row = mysqli_fetch_array($data, MYSQLI_ASSOC)){
             if ($row['indexId'] == 2) {//bienvenida
                 $titulo_inicio =  $row['Titulo'];

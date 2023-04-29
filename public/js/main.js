@@ -230,21 +230,22 @@ $(document).ready( function () {
 
 	//envio de formularios
 	$("#btn-registro").on('click', function (event) {
-
+		var form = $("#form-registro").serialize();
+		form = form + "&op=registro";
 		$.ajax({
 			method:"POST",
 			url: "http://localhost/webkyoshi/libs/route.php",
-			data:{
-				op: 'registro',
-			},
+			data: form,
 			dataType: 'json',
 			success: function (data) {
-				console.log(data);
-				/* var search = "";
-				$.each(data, function (index, value) { 
-					search += '<li class="p-2 hover:bg-blue-600 hover:text-white hover:font-bold"><a class="" href="'+url_const+value.href+'">'+value.texto+'</a></li>';
-				});	
-				$("#result-search").html(search); */
+				var result = data.result;
+					if (result == -1) {
+						alert(data.msg)
+					} else {
+						alert(data.msg);		
+						window.location.href = url_const;				
+					}
+				
 			},
 			error: function (jqXHR, estado, error) {
 				console.log(estado);

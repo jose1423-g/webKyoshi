@@ -1,3 +1,4 @@
+<?php  session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +34,10 @@
                 <h1 class="text-3xl font-bold text-blue-600">Sign up</h1>
             </div>
             <div class="mb-4">
-                <input type="text" class="w-full rounded border-blue-500" name="apellidos" id="apellidos" placeholder="Apellidos"> 
+                <input type="text" class="w-full rounded border-blue-500" name="apellidos" id="apellidos" placeholder="Apellido"> 
             </div>
             <div class="mb-4">
-                <input type="text" class="w-full rounded border-blue-500" name="nombres" id="nombres" placeholder="Nombres"> 
+                <input type="text" class="w-full rounded border-blue-500" name="nombres" id="nombres" placeholder="Nombre"> 
             </div>
             <div class="mb-4">
                 <input type="text" class="w-full rounded border-blue-500" name="nombre_user" id="nombre_user" placeholder="User name"> 
