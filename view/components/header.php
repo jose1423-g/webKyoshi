@@ -1,4 +1,4 @@
-<?php  session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="<?php echo constant('url');?>public/css/style.css">
 </head>
 <body>
-
 <header class="bg-white h-20 sticky z-30 top-0 box-border shadow-md">
     <div class="mx-auto p-5">
         <div class="flex justify-between items-center"><!-- justify-between -->
@@ -51,8 +50,13 @@
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
                     </ul>
                     <div class="max-lg:border-t max-lg:p-2">
-                        <button type="button" class="mr-2 font-semibold rounded-md p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>
-                        <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register">Regístrate</button>
+                        <?php  if (isset($_SESSION['name_user'])) { ?>
+                            <button type="button" class="mr-2 font-semibold rounded-lg bg-blue-600 p-2 text-white" title="Perfil"><img src="<?php echo constant('url') ?>public/img/icono-perfil.png" alt="" width="30px"></button>
+                       <?php } else { ?>
+                            <button type="button" class="mr-2 font-semibold rounded-md  p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>
+                            <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register">Regístrate</button>
+                        <?php } ?>
+                        
                     </div>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-<?php  session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,20 +25,20 @@
     </header>    
     
     <div class="mt-20 p-2 flex justify-center">
-        <form class="bg-white w-96 rounded p-3 shadow-lg" action="" method="POST" id="">
+        <form class="bg-white w-96 rounded p-3 shadow-lg" action="#" method="POST" id="form-login">
             <div class="mb-5 text-center">
                 <h1 class="text-3xl font-bold text-blue-600">Log in</h1>
             </div>
             <div class="mb-5">
-                <label class="block mb-2 font-semibold" for="email">Email/User</label>
-                <input type="email" class="w-full rounded border-blue-500" name="email" id="email" autocomplete="on" placeholder="Correo/User"> 
+                <label class="block mb-2 font-semibold" for="name_user">User</label>
+                <input type="text" class="w-full rounded border-blue-500" name="name_user" id="name_user" autocomplete="on" placeholder="User"> 
             </div>
             <div class="mb-5">
                 <label class="block mb-2 font-semibold" for="pass">Password</label>
                 <input type="password" class="w-full rounded border-blue-500" name="pass" id="pass" autocomplete="on" placeholder="Password"> 
             </div>
             <div class="text-center mb-5">
-                <button class="hover:bg-blue-500  w-40 font-semibold bg-blue-600 p-2 rounded text-white" type="submit">Iniciar Sesíon</button>
+                <button class="hover:bg-blue-500  w-40 font-semibold bg-blue-600 p-2 rounded text-white" type="submit" id="login">Iniciar Sesíon</button>
             </div>
             <div class="text-center">
                 <a class="text-blue-600 font-semibold" href="<?php echo constant('url')?>registro/">Registrarse</a>

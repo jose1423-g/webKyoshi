@@ -1,6 +1,9 @@
 $(document).ready( function () {
 	var url = window.location;
 	const url_const = "http://localhost/webkyoshi/main/"
+	const url_login = "http://localhost/webkyoshi/login/";
+	const url_index = "http://localhost/webkyoshi/";
+	
 	/* Menu Aside */
 	$.ajax({
         method:"POST",
@@ -229,6 +232,7 @@ $(document).ready( function () {
 	});
 
 	//envio de formularios
+	//registro
 	$("#btn-registro").on('click', function (event) {
 		var form = $("#form-registro").serialize();
 		form = form + "&op=registro";
@@ -242,8 +246,8 @@ $(document).ready( function () {
 					if (result == -1) {
 						alert(data.msg)
 					} else {
-						alert(data.msg);		
-						window.location.href = url_const;				
+						//alert(data.msg);		
+						window.location.href = url_login;				
 					}
 				
 			},
@@ -257,6 +261,34 @@ $(document).ready( function () {
 		});
 		event.preventDefault();
 	});
-
+	
+	//login
+	$("#login").on('click', function (event) {
+		var login = $("#form-login").serialize();
+		login = login + "&op=login";
+		$.ajax({
+			method:"POST",
+			url: "http://localhost/webkyoshi/libs/route.php",
+			data: login,
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+				var result = data.result;
+					if (result == -1) {
+						alert(data.msg)
+					} else {
+						window.location.href = url_index;				
+					}
+			},
+			error: function (jqXHR, estado, error) {
+				console.log(estado);
+				console.log(error);
+			},
+			complete: function (data) {
+				
+			}
+		});
+		event.preventDefault();
+	});
 
 });

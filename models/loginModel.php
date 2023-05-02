@@ -11,18 +11,16 @@ require_once (__DIR__.'/../libs/conection.php');
             $this->link = $this->link->conect();
         }
         
-        function indexmodel(){
-            $qry = "SELECT indexId, Titulo, Contenido, Img, Activo FROM contenido_index";
-            $pre = mysqli_prepare($this->link, $qry);
-            $pre->execute();
-            $resp = $pre->get_result();
-
-            $data = array();
-
-            while ($obj = $resp->fetch_object()) {
-                array_push($data, $obj);
+        function session($name_user, $pass){
+            $qry = "SELECT Pass, name_user FROM usuarios WHERE  Pass = '$pass' AND name_user = '$name_user'";
+            $result = mysqli_query($this->link, $qry);
+            $row = mysqli_num_rows($result);
+            if ($row > 0) {
+                return 1;
+            } else {
+                return -1;
             }
-            return $data;
+
         }
        
     }

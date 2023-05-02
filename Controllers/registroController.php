@@ -59,9 +59,14 @@ class registroController{
             exit();
         } elseif ($pass == $pass_conf) {
             $data = $this->obj->agregar($apellidos, $nombres, $username, $email, $pass, $fecha_hoy);
-            return $data;
-            session_start();
-            $_SESSION['nombre_user'] = $username;
+            if ($data == 1) {
+                $msg = "El correo ". $email ." ya se encuntra registrado intente con otro";
+                $result = -1;
+                $a_data = array('result' => $result, 'msg' => $msg);
+                return $a_data;    
+            } else {
+                return $data;
+            }
         } else {
             $msg = "ups la constraseña no coincide";
             $result = -1;
