@@ -5,63 +5,7 @@ $(document).ready( function () {
 	const url_index = "http://localhost/webkyoshi/";
 	
 	/* Menu Aside */
-	$.ajax({
-        method:"POST",
-        url: "http://localhost/webkyoshi/libs/route.php",
-		data:{
-			resp: 'si',
-			op: 'http://localhost/webkyoshi/',
-		},
-		dataType: 'json',
-        success: function (data) {
-			var menu1 = "";
-			var menu2 = "";
-			var menu3 = "";
-			var menu4 = "";
-			var activo = "";
-			$.each(data, function (index, value) {
-				if(value.estatus == 1){
-					if (value.id_menu <= 7) {	
-						menu1 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';						
-					}
-					if (value.id_menu > 7 && value.id_menu <= 31) {
-						menu2 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
-					} 
-					if (value.id_menu > 31 && value.id_menu <= 36 ) {
-						menu3 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
-					}
-					if (value.id_menu > 36 && value.id_menu <= 53) {
-						menu4 += '<li class="mb-3"><a class="hover:text-blue-600" href="'+value.href+'">'+value.texto+'</a></li>';
-					}
-				} else {
-					if (value.id_menu <= 7) {	
-						menu1 += '<li class="mb-3"><a class="hover:text-blue-600 disabled text-red-600" href="'+value.href+'">'+value.texto+'</a></li>';						
-					}
-					if (value.id_menu > 7 && value.id_menu <= 31) {
-						menu2 += '<li class="mb-3"><a class="hover:text-blue-600 disabled text-red-600" href="'+value.href+'">'+value.texto+'</a></li>';
-					} 
-					if (value.id_menu > 31 && value.id_menu <= 36 ) {
-						menu3 += '<li class="mb-3"><a class="hover:text-blue-600 disabled text-red-600" href="'+value.href+'">'+value.texto+'</a></li>';
-					}
-					if (value.id_menu > 36 && value.id_menu <= 53) {
-						menu4 += '<li class="mb-3"><a class="hover:text-blue-600 disabled text-red-600" href="'+value.href+'">'+value.texto+'</a></li>';
-					}
-				}
-			});
-			console.log(activo);
-			$(".aside-menu1").html(menu1);
-			$(".aside-menu2").html(menu2);
-			$(".aside-menu3").html(menu3);
-			$(".aside-menu4").html(menu4);
-		},
-		error: function (jqXHR, estado, error) {
-            console.log(estado);
-            console.log(error);
-        },
-		complete: function (data) {
-			
-        }
-    });
+
 	//carga inicial con el index
 	$.ajax({
         method:"POST",
@@ -100,11 +44,15 @@ $(document).ready( function () {
 			},
 			dataType: 'json',
 			success: function (data) {
-				var card = "";
-				$.each(data, function (index, value) { 
-					card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
-				});	
-				$("#explora").html(card);
+				if (data == '') {
+					$("#explora").html("<h1 class='text-blue-600 text-center font-bold'>Ups :( el contenido no esta disponible</h1>");
+				} else {
+					var card = "";
+					$.each(data, function (index, value) { 
+						card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
+					});	
+					$("#explora").html(card);
+				}
 			},
 			error: function (jqXHR, estado, error) {
 				console.log(estado);
@@ -214,7 +162,6 @@ $(document).ready( function () {
 			},
 			dataType: 'json',
 			success: function (data) {
-				console.log(data);
 				var search = "";
 				$.each(data, function (index, value) { 
 					search += '<li class="p-2 hover:bg-blue-600 hover:text-white hover:font-bold"><a class="" href="'+url_const+value.href+'">'+value.texto+'</a></li>';

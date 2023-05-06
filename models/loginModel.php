@@ -12,7 +12,7 @@ require_once (__DIR__.'/../libs/conection.php');
         }
         
         function session($name_user, $pass){
-            $qry = "SELECT Pass, name_user FROM usuarios WHERE  Pass = '$pass' AND name_user = '$name_user'";
+            $qry = "SELECT Pass, name_user FROM usuarios WHERE  Pass = '$pass' AND name_user = '$name_user' OR Email = '$name_user'";
             $result = mysqli_query($this->link, $qry);
             $row = mysqli_num_rows($result);
             if ($row > 0) {

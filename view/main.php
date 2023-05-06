@@ -1,7 +1,7 @@
 <?php  include './view/components/header.php';?>
 <!-- max-w-max -->
     <main class="flex overflow-x-hidden bg-white w-full">
-        <aside class="bg-white w-80 fixed hidden lg:block lg:fixed top-20 z-20 overflow-y-scroll inset-0 max-lg:shadow-lg" id="drop-aside">
+        <aside class="bg-white w-80 fixed hidden lg:block lg:fixed top-20 z-40 overflow-y-scroll inset-0 max-lg:shadow-lg" id="drop-aside">
             <?php  require_once './view/components/aside.php' ?>
         </aside>
         <div class="lg:ml-80 ml-0 overflow-x-hidden">

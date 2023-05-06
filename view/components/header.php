@@ -35,7 +35,7 @@
                 <div class="flex items-center max-lg:shadow max-lg:block max-lg:hidden max-lg:p-3 max-lg:bg-white max-lg:w-full max-lg:top-20 max-lg:start-0 max-lg:absolute menu-drop">
                     <ul class="block font-semibold lg:flex">
                         <li class="max-lg:mb-2 mx-3"><a class="hover:text-blue-600 pointer" id="toggle-menu">Recursos<i class="fa-sharp fa-solid fa-caret-down ml-1"></i></a>
-                            <ul class="bg-white pl-6 max-lg:list-disc lg:p-3 lg:absolute lg:z-40 top-14 lg:shadow-md rounded hidden dropdown-menu">
+                            <ul class="bg-white pl-6 max-lg:list-disc lg:p-3 lg:absolute lg:z-50 top-14 lg:shadow-md rounded hidden dropdown-menu">
                                 <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
                                 <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
                                 <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
@@ -48,6 +48,9 @@
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Recursos del aula</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Tienda</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/session_destroy.php">Cerrar</a></li>
+
+
                     </ul>
                     <div class="max-lg:border-t max-lg:p-2">
                         <?php  if (isset($_SESSION['name_user'])) { ?>
@@ -63,7 +66,7 @@
         </div>    
     </div>
 </header>
-<div class="w-full h-screen z-20 bg-white fixed top-20 hidden" id="content-search">
+<div class="w-full h-screen z-40 bg-white fixed top-20 hidden" id="content-search">
     <div class="container mx-auto p-2">
         <div class="flex justify-end mb-5">
             <button type="button" id="close-search"><img src="<?php echo constant('url');?>public/img/closemenu.png" alt="close-search" width="40px"></button>
@@ -78,6 +81,5 @@
                 </div>
             </form>
         </div>
-    
     </div>
 </div>

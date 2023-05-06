@@ -19,17 +19,10 @@
         }
     
         function aside_menu(){
-            $qry = "SELECT id_menu, href, texto, estatus FROM menu ";
-            $pre =  mysqli_prepare($this->link, $qry);
-            $pre->execute();
-                $resp = $pre->get_result();
-    
-                $data = array();
-    
-                while ($obj = $resp->fetch_object()) {
-                    array_push($data, $obj);
-                }
-                return $data;
+            $qry = "SELECT id_menu, href, texto, estatus FROM menu";
+            $data =  mysqli_query($this->link, $qry);
+            //$data = mysqli_fetch_array($data);
+            return $data;
         }
 
         function explora(){
