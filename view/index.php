@@ -44,7 +44,7 @@
                 <div class="max-lg:hidden">
                     <ul class="font-semibold flex mb-3">
                         <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="preguntas">Preguntas</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Diagramas">Diagramas</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="diagrama">Diagramas</a></li>
                         <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Mapascognitivos">Mapas cognitivos</a></li>
                         <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Estrategiasgrupales">Estrategias grupales</a></li>
                     </ul>

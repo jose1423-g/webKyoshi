@@ -45,14 +45,7 @@
                     allowfullscreen></iframe>
                 </aside> 
             </div>
-            <div class="p-5">
-                <div class="mb-10">
-                    <h1 class="text-2xl mb-4 text-blue-600 font-bold">Herramientas</h1>
-                </div> 
-                <div class="mb-10">
-                    <h1 class="text-2xl mb-4 text-blue-600 font-bold">Fuentes</h1>
-                </div>
-            </div>
+            
             
         <?php } ?>
         </div>    

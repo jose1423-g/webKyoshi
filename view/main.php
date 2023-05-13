@@ -1,7 +1,7 @@
 <?php  include './view/components/header.php';?>
 <!-- max-w-max -->
-    <main class="flex overflow-x-hidden bg-white w-full">
-        <aside class="bg-white w-80 fixed hidden lg:block lg:fixed top-20 z-40 overflow-y-scroll inset-0 max-lg:shadow-lg" id="drop-aside">
+    <main class="flex overflow-x-hidden w-full">
+        <aside class="w-80 fixed hidden lg:block lg:fixed top-20 z-40 overflow-y-scroll inset-0 max-lg:shadow-lg" id="drop-aside">
             <?php  require_once './view/components/aside.php' ?>
         </aside>
         <div class="lg:ml-80 ml-0 overflow-x-hidden">
@@ -39,14 +39,6 @@
                     </div>
                 </aside> 
             </div>
-            <div class="p-5">
-                <div class="mb-10">
-                    <h1 class="text-2xl mb-4 text-blue-600 font-bold">Herramientas</h1>
-                </div> 
-                <div class="mb-10">
-                    <h1 class="text-2xl mb-4 text-blue-600 font-bold">Fuentes</h1>
-                </div>
-            </div>
         </div>    
     </main>
-    <?php  include './view/components/footer.php';?>
+<?php  include './view/components/footer.php';?>

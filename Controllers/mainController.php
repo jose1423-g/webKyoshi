@@ -71,7 +71,47 @@
             $data = $this->obj->analogia();
             return $data;        
         }
-
+        function diagramas(){
+            $data = $this->obj->diagramas();
+            return $data;        
+        }
+        function diagrama_radial(){
+            $data = $this->obj->diagrama_radial();
+            return $data;        
+        }
+        function diagrama_de_arbol(){
+            $data = $this->obj->diagrama_de_arbol();
+            return $data;        
+        }
+        function diagrama_de_causa_efecto(){
+            $data = $this->obj->diagrama_de_causa_efecto();
+            return $data;        
+        }
+        function diagrama_de_flujo(){
+            $data = $this->obj->diagrama_de_flujo();
+            return $data;        
+        }
+        function mapas_cognitivos(){
+            $data = $this->obj->mapas_cognitivos();
+            return $data;        
+        }
+        function mapa_mental(){
+            $data = $this->obj->mapa_mental();
+            return $data;        
+        }
+        function mapa_conceptual(){
+            $data = $this->obj->mapa_conceptual();
+            return $data;        
+        }
+        // function (){
+        //     $data = $this->obj->();
+        //     return $data;        
+        // }
+        // function (){
+        //     $data = $this->obj->();
+        //     return $data;        
+        // }
+        
         
 
         

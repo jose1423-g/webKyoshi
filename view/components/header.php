@@ -46,9 +46,9 @@
                         </li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>premium/">Premium</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Recursos del aula</a></li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Tienda</a></li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>tienda/">Tienda</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/session_destroy.php">Cerrar</a></li>
+                        <!-- <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/session_destroy.php">Cerrar</a></li> -->
 
 
                     </ul>

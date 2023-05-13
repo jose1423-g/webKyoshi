@@ -45,7 +45,7 @@
             FROM contenido t1 
             LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
             LEFT JOIN menu t2 ON t1.id_contenido = t2.id_contenido 
-            WHERE Titulo LIKE '%$dato%'"; 
+            WHERE t1.Titulo LIKE '%$dato%' LIMIT 4"; 
             $resp = mysqli_query($this->link, $qry);
             $data = array();
             while ($obj = $resp->fetch_object()) {

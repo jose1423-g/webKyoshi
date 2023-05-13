@@ -32,7 +32,7 @@ $(document).ready( function () {
         }
     });
 
-	//funcion para refrescar el explora
+	//funcion para refrescar el contenido explora
 	$(".search_explora").on('click', function(){
 	 	var data = $(this).attr('data-id');
 		$.ajax({
@@ -44,6 +44,7 @@ $(document).ready( function () {
 			},
 			dataType: 'json',
 			success: function (data) {
+				console.log(data);
 				if (data == '') {
 					$("#explora").html("<h1 class='text-blue-600 text-center font-bold'>Ups :( el contenido no esta disponible</h1>");
 				} else {

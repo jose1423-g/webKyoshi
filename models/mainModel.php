@@ -197,7 +197,7 @@
             LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
             LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
             LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
-            WHERE t1.id_contenido = ";
+            WHERE t1.id_contenido = 18";
             $data = mysqli_query($this->link, $qry);
             return $data;
         }
@@ -209,7 +209,79 @@
             LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
             LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
             LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
-            WHERE t1.id_contenido = ";
+            WHERE t1.id_contenido = 19";
+            $data = mysqli_query($this->link, $qry);
+            return $data;
+        }
+
+        function diagrama_de_arbol(){
+            $qry  = "SELECT t1.Titulo, t2.Que, t2.Como, t2.Para, t1.sub_para_que, t1.Que_es, t1.Como_se, t1.Para_que, 
+            t3.ruta AS ruta_img, t4.ruta AS ruta_video
+            FROM contenido t1
+            LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
+            LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
+            LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
+            WHERE t1.id_contenido = 20";
+            $data = mysqli_query($this->link, $qry);
+            return $data;
+        }
+
+        function diagrama_de_causa_efecto(){
+            $qry  = "SELECT t1.Titulo, t2.Que, t2.Como, t2.Para, t1.sub_para_que, t1.Que_es, t1.Como_se, t1.Para_que, 
+            t3.ruta AS ruta_img, t4.ruta AS ruta_video
+            FROM contenido t1
+            LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
+            LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
+            LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
+            WHERE t1.id_contenido = 21";
+            $data = mysqli_query($this->link, $qry);
+            return $data;
+        }
+
+        function diagrama_de_flujo(){
+            $qry  = "SELECT t1.Titulo, t2.Que, t2.Como, t2.Para, t1.sub_para_que, t1.Que_es, t1.Como_se, t1.Para_que, 
+            t3.ruta AS ruta_img, t4.ruta AS ruta_video
+            FROM contenido t1
+            LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
+            LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
+            LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
+            WHERE t1.id_contenido = 22";
+            $data = mysqli_query($this->link, $qry);
+            return $data;
+        }
+
+        function mapas_cognitivos(){
+            $qry  = "SELECT t1.Titulo, t2.Que, t2.Como, t2.Para, t1.sub_para_que, t1.Que_es, t1.Como_se, t1.Para_que, 
+            t3.ruta AS ruta_img, t4.ruta AS ruta_video
+            FROM contenido t1
+            LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
+            LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
+            LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
+            WHERE t1.id_contenido = 23";
+            $data = mysqli_query($this->link, $qry);
+            return $data;
+        }
+
+        function mapa_mental(){
+            $qry  = "SELECT t1.Titulo, t2.Que, t2.Como, t2.Para, t1.sub_para_que, t1.Que_es, t1.Como_se, t1.Para_que, 
+            t3.ruta AS ruta_img, t4.ruta AS ruta_video
+            FROM contenido t1
+            LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
+            LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
+            LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
+            WHERE t1.id_contenido = 24";
+            $data = mysqli_query($this->link, $qry);
+            return $data;
+        }
+
+        function mapa_conceptual(){
+            $qry  = "SELECT t1.Titulo, t2.Que, t2.Como, t2.Para, t1.sub_para_que, t1.Que_es, t1.Como_se, t1.Para_que, 
+            t3.ruta AS ruta_img, t4.ruta AS ruta_video
+            FROM contenido t1
+            LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
+            LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
+            LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
+            WHERE t1.id_contenido = 24";
             $data = mysqli_query($this->link, $qry);
             return $data;
         }
