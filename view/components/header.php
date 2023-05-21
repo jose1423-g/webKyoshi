@@ -45,7 +45,7 @@
                             </ul>
                         </li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>premium/">Premium</a></li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="#">Recursos del aula</a></li>
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>recursos_del_aula/">Recursos del aula</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>tienda/">Tienda</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
                         <!-- <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/session_destroy.php">Cerrar</a></li> -->
@@ -56,8 +56,8 @@
                         <?php  if (isset($_SESSION['name_user'])) { ?>
                             <button type="button" class="mr-2 font-semibold rounded-lg bg-blue-600 p-2 text-white" title="Perfil"><img src="<?php echo constant('url') ?>public/img/icono-perfil.png" alt="" width="30px"></button>
                        <?php } else { ?>
-                            <button type="button" class="mr-2 font-semibold rounded-md  p-2 hover:text-blue-600" id="btn-login">Iniciar sesión</button>
-                            <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register">Regístrate</button>
+                            <button type="button" class="mr-2 font-semibold rounded-md  p-2 hover:text-blue-600" id="btn-login"><p>Iniciar sesión</p></button>
+                            <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register"><p>Regístrate</p></button>
                         <?php } ?>
                         
                     </div>
@@ -66,10 +66,11 @@
         </div>    
     </div>
 </header>
-<div class="w-full h-screen z-40 bg-white fixed top-20 hidden" id="content-search">
+<!-- inset-x-12 -->
+<div class="bg-white shadow-xl fixed z-40  top-28 hidden rounded-md inset-x-2 md:inset-x-12 border-2 border-blue-600" id="content-search">
     <div class="container mx-auto p-2">
         <div class="flex justify-end mb-5">
-            <button type="button" id="close-search"><img src="<?php echo constant('url');?>public/img/closemenu.png" alt="close-search" width="40px"></button>
+            <button type="button" id="close-search"><img src="<?php echo constant('url');?>public/img/closemenu.png" alt="close-search" width="35rem"></button>
         </div>
         <div class="flex justify-center">
             <form action="#" method="post" class="w-4/6" id="form-search">

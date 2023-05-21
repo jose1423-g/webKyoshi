@@ -281,7 +281,7 @@
             LEFT JOIN titulos t2 ON t1.id_titulo = t2.id_titulo
             LEFT JOIN images t3 ON t1.id_contenido = t3.id_contenido
             LEFT JOIN videos t4 ON t1.id_contenido = t4.id_contenido
-            WHERE t1.id_contenido = 24";
+            WHERE t1.id_contenido = 25";
             $data = mysqli_query($this->link, $qry);
             return $data;
         }

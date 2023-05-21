@@ -1,4 +1,5 @@
 <?php  include './view/components/header.php';?>
+
     <?php while ($row = mysqli_fetch_array($data, MYSQLI_ASSOC)){
             if ($row['indexId'] == 2) {//bienvenida
                 $titulo_inicio =  $row['Titulo'];
@@ -22,6 +23,9 @@
                 $img_tienda = $row['Img'];
             }
         }?> 
+        <div class="w-80 bg-white overflow-y-scroll inset-0 hidden fixed top-20 z-40 lg:hidden" id="drop-aside">
+            <?php  require_once './view/components/aside.php' ?>
+        </div>
         <div class="block shadow-lg w-full mb-16 p-3 lg:p-4 lg:flex justify-center items-center rounded-md bg-white">    
             <div class="lg:w-1/2 max-lg:mb-3">
                 <h2 class="font-semibold mb-4 lg:text-6xl max-lg:text-5xl max-lg:text-center" id="Titulo1"><?php echo $titulo_inicio; ?></h2>
@@ -43,44 +47,15 @@
                 </div>
                 <div class="max-lg:hidden">
                     <ul class="font-semibold flex mb-3">
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="preguntas">Preguntas</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="diagrama">Diagramas</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Mapascognitivos">Mapas cognitivos</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a class="contenido-dinamico pointer search_explora" data-id="Estrategiasgrupales">Estrategias grupales</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_explora" data-id="preguntas">Preguntas</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_explora" data-id="diagrama">Diagramas</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_explora" data-id="Mapascognitivos">Mapas cognitivos</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_explora" data-id="Estrategiasgrupales">Estrategias grupales</a></li>
                     </ul>
-                    <div class="p-4 flex justify-center rounded border" id="explora"></div>
+                    <div class="p-4 flex justify-center rounded border explora"></div>
                 </div>
                 <!-- contenido mobil -->
-                <div class="flex justify-center flex-wrap border-t border-blue-600 lg:hidden">
-                    <div class="bg-white rounded shadow-lg w-64 mb-4 mx-3 mt-2">
-                        <img class="w-full" src="./public/img/prueba.png" alt="Preguntas">
-                        <div class="block p-2">  
-                            <h1 class="text-2xl font-semibold mb-3">Preguntas</h1>
-                            <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded shadow-lg w-64 mb-4 mx-3">
-                        <img class="w-full" src="<?php echo constant('url') ?>public/img/premium.png" alt="Preguntas">
-                        <div class="block p-2">  
-                            <h1 class="text-2xl font-semibold mb-3">Diagramas</h1>
-                            <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded shadow-lg w-64 mb-4 mx-3">
-                        <img class="w-full" src="<?php echo constant('url') ?>public/img/premium.png" alt="Preguntas">
-                        <div class="block p-2">  
-                            <h1 class="text-2xl font-semibold mb-4">Mapas Cognitivos</h1>
-                            <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded shadow-lg w-64 mb-4 mx-3<">
-                        <img class="w-full" src="<?php echo constant('url') ?>public/img/premium.png" alt="Preguntas">
-                        <div class="block p-2">  
-                            <h1 class="text-2xl font-semibold mb-3">Estrategias Grupales</h1>
-                            <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="flex justify-center flex-wrap border-t border-blue-600 lg:hidden explora"></div>
             </div><!-- div principal -->
 
             <!-- PREMIUM -->
@@ -104,11 +79,11 @@
                 </div>
                 <div class="max-lg:hidden">
                     <ul class="font-semibold flex mb-3">
-                        <li class="mx-2 hover:text-blue-600"><a href="#">Plantillas</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a href="#">eBooks</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a href="#">Guias de Practica</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a href="#">Casos</a></li>
-                        <li class="mx-2 hover:text-blue-600"><a href="#">Infografias</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_recursos" data-id="plantillas">Plantillas</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_recursos" data-id="eBooks">eBooks</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_recursos" data-id="Guias_de_practica">Guias de Practica</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_recursos" data-id="Casos">Casos</a></li>
+                        <li class="mx-2 hover:text-blue-600"><a class="pointer search_recursos" data-id="infografias">Infografias</a></li>
                     </ul>
                     <div class="flex justify-center p-4 rounded border">
                         <!-- card -->

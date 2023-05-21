@@ -21,45 +21,45 @@
 		if($id_menu <= 7) { 
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_previos .= '<li class="mb-3"><a class="hover:text-blue-600" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_previos .= '<li class="mb-3"><a class="hover:text-blue-600" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 7 && $id_menu <= 31) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_informacion .= '<li class="mb-3"><a class="hover:text-blue-600" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_informacion .= '<li class="mb-3"><a class="hover:text-blue-600" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 31 && $id_menu <= 36) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_otras .= '<li class="mb-3"><a class="hover:text-blue-600" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_otras .= '<li class="mb-3"><a class="hover:text-blue-600" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 36 && $id_menu <= 42) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_grupales .= '<li class="mb-3"><a class="hover:text-blue-600" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_grupales .= '<li class="mb-3"><a class="hover:text-blue-600" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 42) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_competencias .= '<li class="mb-3"><a class="hover:text-blue-600" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_competencias .= '<li class="mb-3"><a class="hover:text-blue-600" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		}
 	} else {
 		if($id_menu <= 7) { 
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_previos .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_previos .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 7 && $id_menu <= 31) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_informacion .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_informacion .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 31 && $id_menu <= 36) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_otras .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_otras .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 36 && $id_menu <= 42) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_grupales .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_grupales .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		} elseif ($id_menu > 42) {
 			$previos_link = $row['href'];
 			$previos_texto = $row['texto'];
-			$html_competencias .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.$previos_link.'>'.$previos_texto.'</a></li>';
+			$html_competencias .= '<li class="mb-3"><a class="hover:text-blue-600 disabled text-blue-300" href='.constant("url").'main/'.$previos_link.'>'.$previos_texto.'</a></li>';
 		}
 	}
 	

@@ -1,11 +1,12 @@
 $(document).ready( function () {
 	var url = window.location;
+	
 	const url_const = "http://localhost/webkyoshi/main/"
 	const url_login = "http://localhost/webkyoshi/login/";
 	const url_index = "http://localhost/webkyoshi/";
-	
+		
 	/* Menu Aside */
-
+	
 	//carga inicial con el index
 	$.ajax({
         method:"POST",
@@ -19,9 +20,9 @@ $(document).ready( function () {
 			//console.log(data);
 			var card = "";
 			$.each(data, function (index, value) { 
-				card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
+				card += '<div class="bg-white rounded shadow-xl w-72 mx-3 max-lg:mt-3 mb-2"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
 			});	
-			$("#explora").html(card);
+			$(".explora").html(card);
 		},
 		error: function (jqXHR, estado, error) {
             console.log(estado);
@@ -46,13 +47,13 @@ $(document).ready( function () {
 			success: function (data) {
 				console.log(data);
 				if (data == '') {
-					$("#explora").html("<h1 class='text-blue-600 text-center font-bold'>Ups :( el contenido no esta disponible</h1>");
+					$(".explora").html("<h1 class='text-blue-600 text-center font-bold'>Ups :( el contenido no esta disponible</h1>");
 				} else {
 					var card = "";
 					$.each(data, function (index, value) { 
-						card += '<div class="bg-white rounded shadow-xl w-72 mx-3"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
+						card += '<div class="bg-white rounded shadow-xl w-72 mx-3 max-lg:mt-3 mb-2"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
 					});	
-					$("#explora").html(card);
+					$(".explora").html(card);
 				}
 			},
 			error: function (jqXHR, estado, error) {
@@ -106,8 +107,6 @@ $(document).ready( function () {
 
 	//Menu aside drop
 	$("#btn-aside").on('click', function(){
-		/* $("#drop-aside").toggle('slow'); */
-		
 		if($("#drop-aside").hasClass('hidden')){
 			$("#drop-aside").removeClass('hidden');
 		} else {
