@@ -3,8 +3,7 @@
         <h1 class="text-white">Footer</h1>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="<?php echo constant('url'); ?>node_modules/jquery/dist/jquery.js"></script>
     <script src="<?php echo constant('url'); ?>public/js/main.js"></script>
 
 

@@ -4,7 +4,6 @@ $(document).ready(function () {
         url: "https://api.itbook.store/1.0/search/mongodb",
         dataType: 'json',
         success: function (resp) {
-            console.log(resp);
             var card = "";
             var datos = resp.books
             datos.forEach(element => {

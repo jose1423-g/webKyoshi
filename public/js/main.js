@@ -1,6 +1,6 @@
-$(document).ready( function () {
-	var url = window.location;
+$(document).ready(function(){
 	
+	var url = window.location;
 	const url_const = "http://localhost/webkyoshi/main/"
 	const url_login = "http://localhost/webkyoshi/login/";
 	const url_index = "http://localhost/webkyoshi/";
@@ -17,7 +17,6 @@ $(document).ready( function () {
 		},
 		dataType: 'json',
         success: function (data) {
-			//console.log(data);
 			var card = "";
 			$.each(data, function (index, value) { 
 				card += '<div class="bg-white rounded shadow-xl w-72 mx-3 max-lg:mt-3 mb-2"><img class="w-full" src="'+url+value.ruta_img+'" alt=""><div class="block p-2"><h1 class="text-2xl font-semibold mb-3">'+value.Titulo+'</h1><button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold"><a href="'+url_const+value.href+'">Explora más</a></button></div></div>';
