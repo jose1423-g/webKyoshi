@@ -27,6 +27,7 @@
                 </a>
             </div>
             <div class="flex items-center">
+                <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/pointmenu.png" alt="" width="45px"></img></button>
                 <div class="flex items-center max-lg:shadow max-lg:block max-lg:hidden max-lg:p-3 max-lg:bg-white max-lg:w-full max-lg:top-20 max-lg:start-0 max-lg:absolute menu-drop">
                     <ul class="block font-semibold lg:flex">
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Estrategias</a></li>
@@ -48,7 +49,6 @@
                     <div class="flex items-center">
                         <a class="buscador pointer"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
                         <a class="mx-3 pointer"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
-                        <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/pointmenu.png" alt="" width="45px"></img></button>
                     </div>
                     <div class="max-lg:border-t max-lg:p-2">
                         <?php  if (isset($_SESSION['name_user'])) { ?>
