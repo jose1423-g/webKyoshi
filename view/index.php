@@ -90,7 +90,28 @@
                         <div class="bg-white rounded shadow-lg w-72 mr-3">
                             <img src="<?php echo constant('url'); ?>public/img/premium.png" alt="">
                             <div class="block p-2">  
-                                <h1 class="text-2xl font-semibold mb-3">holas</h1>
+                                <h1 class="text-2xl font-semibold mb-3">Cuadro comparativo</h1>
+                                <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded shadow-lg w-72 mr-3">
+                            <img src="<?php echo constant('url'); ?>public/img/premium.png" alt="">
+                            <div class="block p-2">  
+                                <h1 class="text-2xl font-semibold mb-3">Diagrama radial</h1>
+                                <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded shadow-lg w-72 mr-3">
+                            <img src="<?php echo constant('url'); ?>public/img/premium.png" alt="">
+                            <div class="block p-2">  
+                                <h1 class="text-2xl font-semibold mb-3">Diagrama de árbol</h1>
+                                <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded shadow-lg w-72 mr-3">
+                            <img src="<?php echo constant('url'); ?>public/img/premium.png" alt="">
+                            <div class="block p-2">  
+                                <h1 class="text-2xl font-semibold mb-3">Diagrama de flujo</h1>
                                 <button class="p-1 bg-blue-600 w-full rounded-md text-white font-semibold">Explorar más</button>
                             </div>
                         </div>

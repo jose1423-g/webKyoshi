@@ -20,38 +20,36 @@
             <div class="flex lg:hidden">
                 <button type="button" class="lg:hidden" id="btn-aside"><img src="<?php echo constant('url');?>public/img/iconmenu.png" alt="" width="45px"></button>
             </div>
-            <div class="flex items-center mr-3">
-                <a href="<?php  echo constant('url'); ?>">
+            <div class="mr-3">
+                <a class="flex items-center" href="<?php  echo constant('url'); ?>">
                     <img src="<?php echo constant('url');?>public/img/icon-logo.png" alt="Logo" width="40px" height="auto">
+                    <h1 class="ml-3 text-3xl font-semibold max-lg:hidden">Kyoshi</h1>
                 </a>
-                <h1 class="ml-3 text-3xl font-semibold max-lg:hidden">Titulo</h1>
             </div>
             <div class="flex items-center">
-                <div class="flex items-center">
-                    <a class="buscador pointer"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
-                    <a class="mx-3 pointer"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
-                    <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/pointmenu.png" alt="" width="45px"></img></button>
-                </div>
                 <div class="flex items-center max-lg:shadow max-lg:block max-lg:hidden max-lg:p-3 max-lg:bg-white max-lg:w-full max-lg:top-20 max-lg:start-0 max-lg:absolute menu-drop">
                     <ul class="block font-semibold lg:flex">
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Estrategias</a></li>
                         <li class="max-lg:mb-2 mx-3"><a class="hover:text-blue-600 pointer" id="toggle-menu">Recursos<i class="fa-sharp fa-solid fa-caret-down ml-1"></i></a>
                             <ul class="bg-white pl-6 max-lg:list-disc lg:p-3 lg:absolute lg:z-50 top-14 lg:shadow-md rounded hidden dropdown-menu">
-                                <li><a class="hover:text-blue-600" href="#">Plantillas</a></li>
-                                <li><a class="hover:text-blue-600" href="#">eBooks</a></li>
-                                <li><a class="hover:text-blue-600" href="#">Guias de practica</a></li>
-                                <li><a class="hover:text-blue-600" href="#">Casos</a></li>
-                                <li><a class="hover:text-blue-600" href="#">Infografias</a></li>
-                                <li><a class="hover:text-blue-600" href="#">Rubricas</a></li>
+                                <li><a class="hover:text-blue-600" href="<?php echo constant('url');?>recursos_del_aula/">Recursos del aula</a></li>
+                                <li><a class="hover:text-blue-600 disabled" href="#">Plantillas</a></li>
+                                <li><a class="hover:text-blue-600 disabled" href="#">eBooks</a></li>
+                                <li><a class="hover:text-blue-600 disabled" href="#">Guias de practica</a></li>
+                                <li><a class="hover:text-blue-600 disabled" href="#">Casos</a></li>
+                                <li><a class="hover:text-blue-600 disabled" href="#">Infografias</a></li>
+                                <li><a class="hover:text-blue-600 disabled" href="#">Rubricas</a></li>
+                                <li></li>
                             </ul>
                         </li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>premium/">Premium</a></li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>recursos_del_aula/">Recursos del aula</a></li>
                         <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>tienda/">Tienda</a></li>
-                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>main/lluvia_de_ideas">Contenido</a></li>
-                        <!-- <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="http://localhost/webkyoshi/session_destroy.php">Cerrar</a></li> -->
-
-
+                        <li class="mx-3 max-lg:mb-2"><a class="hover:text-blue-600" href="<?php echo constant('url');?>premium/">Planes y Precios</a></li>
                     </ul>
+                    <div class="flex items-center">
+                        <a class="buscador pointer"><img src="<?php echo constant('url');?>public/img/search.png" alt="" width="30px"></a>
+                        <a class="mx-3 pointer"><img src="<?php echo constant('url');?>public/img/shopping.png" alt="" width="30px"></a>
+                        <button type="button" class="lg:hidden" id="btn-menu"><img src="<?php echo constant('url');?>public/img/pointmenu.png" alt="" width="45px"></img></button>
+                    </div>
                     <div class="max-lg:border-t max-lg:p-2">
                         <?php  if (isset($_SESSION['name_user'])) { ?>
                             <button type="button" class="mr-2 font-semibold rounded-lg bg-blue-600 p-2 text-white" title="Perfil"><img src="<?php echo constant('url') ?>public/img/icono-perfil.png" alt="" width="30px"></button>
@@ -59,7 +57,6 @@
                             <button type="button" class="mr-2 font-semibold rounded-md  p-2 hover:text-blue-600" id="btn-login"><p>Iniciar sesión</p></button>
                             <button type="button" class="text-white font-semibold bg-blue-600 rounded-md p-2" id="btn-register"><p>Regístrate</p></button>
                         <?php } ?>
-                        
                     </div>
                 </div>
             </div>
